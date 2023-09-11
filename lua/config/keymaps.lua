@@ -4,8 +4,8 @@
 
 --| let &t_ut='' |--
 
-local nv = { "n", "v" }
-local nt = { "n", "t" }
+local nx = { "n", "x" } -- mode normal and visual (besides select)
+local nt = { "n", "t" } -- mode normal and terminal
 
 -- NOTE: only for lazyvim
 local unset_mapper = {
@@ -56,12 +56,12 @@ end
 -- end NOTE
 
 local keymapper = {
-  { ".", "", nv },
+  { ".", "", nx },
 
-  { "K", "5k", nv },
-  { "J", "5j", nv },
-  { "H", "14h", nv },
-  { "L", "14l", nv },
+  { "K", "5k", nx },
+  { "J", "5j", nx },
+  { "H", "14h", nx },
+  { "L", "14l", nx },
 
   -- Resize splits with arrow keys, use lazyvim default keymaps
   -- { "<c-up>", "<cmd>res +5<cr>" },
@@ -69,7 +69,7 @@ local keymapper = {
   -- { "<c-left>", "<cmd>vertical resize-5<cr>" },
   -- { "<c-right>", "<cmd>vertical resize+5<cr>" },
 
-  { "S", "<cmd>w<cr>", nv },
+  { "S", "<cmd>w<cr>" },
   { "Q", "<cmd>q<cr>" },
 
   -- All fold expand for current buffer
@@ -111,12 +111,14 @@ local keymapper = {
   { "【", "【】<left>", "i" },
   { "（", "（）<left>", "i" },
 
-  { ".", "%", nv },
+  { ".", "%", nx },
   { "<c-n>", "<c-\\><c-n>", "t" },
 
   -- delete and enter insert mode for luasnip, coc set this by default
   { "<bs>", "<c-o>s", "s" },
   { "<c-h>", "<c-o>s", "s" },
+
+  { "<leader>h", "<cmd>Man<cr>", nx },
 }
 
 for _, map in ipairs(keymapper) do
