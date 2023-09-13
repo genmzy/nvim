@@ -2,6 +2,12 @@
 -- chinese translator
 --
 
+for l in io.lines("/proc/1/cgroup") do
+  if string.match(l, "docker") then
+    return {}
+  end
+end
+
 return {
   "JuanZoran/Trans.nvim",
   build = function()
