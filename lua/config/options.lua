@@ -6,7 +6,7 @@ local opt = vim.opt
 
 vim.o.mouse = ""
 vim.g.python3_host_prog = "/usr/bin/python3"
-opt.listchars:append("eol:↵")
+-- opt.listchars:append("eol:↵")
 opt.listchars:append("tab:¦ ")
 opt.listchars:append("trail:▫")
 opt.softtabstop = 4
