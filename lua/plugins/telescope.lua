@@ -34,8 +34,8 @@ return {
           ["<c-a>"] = "toggle_all",
           -- NOTE: telescope yanky history mappings should override telescope <cr> mappings
           -- More specfics see plugins.yanky.lua
-          ["<c-r>"] = "select_default",
-          ["<cr>"] = function(prompt_bufnr, _mode)
+          ["<cr>"] = "select_default",
+          ["<s-cr>"] = function(prompt_bufnr, _mode)
             if tele_not_selected(prompt_bufnr, _mode) then
               require("telescope.actions.set").select(prompt_bufnr, "default")
             else

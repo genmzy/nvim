@@ -6,6 +6,7 @@
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "c", "cpp", "java" },
   callback = function()
+    ---@diagnostic disable-next-line: inject-field
     vim.b.autoformat = false
   end,
 })
