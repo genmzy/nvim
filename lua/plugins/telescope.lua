@@ -8,6 +8,14 @@ local function tele_not_selected(prompt_bufnr, _)
   return #picker:get_multi_selection() == 0
 end
 
+local function mselect(prompt_bufnr, _mode)
+  if tele_not_selected(prompt_bufnr, _mode) then
+    require("telescope.actions.set").select(prompt_bufnr, "default")
+  else
+    require("trouble.providers.telescope").open_selected_with_trouble(prompt_bufnr, _mode)
+  end
+end
+
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = { "folke/trouble.nvim" },
@@ -35,13 +43,8 @@ return {
           -- NOTE: telescope yanky history mappings should override telescope <cr> mappings
           -- More specfics see plugins.yanky.lua
           ["<cr>"] = "select_default",
-          ["<s-cr>"] = function(prompt_bufnr, _mode)
-            if tele_not_selected(prompt_bufnr, _mode) then
-              require("telescope.actions.set").select(prompt_bufnr, "default")
-            else
-              require("trouble.providers.telescope").open_selected_with_trouble(prompt_bufnr, _mode)
-            end
-          end,
+          ["<s-cr>"] = mselect,
+          ["<c-r>"] = mselect,
         },
       },
     },

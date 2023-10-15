@@ -30,6 +30,8 @@ require("lazy").setup({
     -- import colors
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     { import = "lazyvim.plugins.extras.util.project" },
+    -- navic
+    { import = "lazyvim.plugins.extras.editor.navic" },
     -- import test
     { import = "lazyvim.plugins.extras.test.core" },
     -- import/override with your plugins

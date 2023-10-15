@@ -11,6 +11,5 @@ return {
   end,
   opts = {
     diagnostics = { virtual_text = false },
-    autoformat = true,
   },
 }
