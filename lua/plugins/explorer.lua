@@ -16,7 +16,7 @@ local keymap = {
     require("neo-tree.ui.renderer").focus_node(state, node:get_parent_id())
   end,
   ["l"] = "open",
-  ["S"] = "open_split",
+  ["S"] = "open_vsplit",
   ["s"] = "none",
   -- ['S'] = 'split_with_window_picker',
   -- ['s'] = 'vsplit_with_window_picker',
