@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 vim.g.autoformat = false
--- vim.g.root_spec = { "cwd" }
+vim.g.root_spec = { { ".git", "lua" }, "cwd", "lsp" }
 
 local opt = vim.opt
 

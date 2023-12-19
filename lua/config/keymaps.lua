@@ -135,6 +135,17 @@ if plugged("accelerated-jk.nvim") then
   vim.keymap.set("n", "k", "<Plug>(accelerated_jk_gk)")
 end
 
+-- auto pairs maps --
+local map_bs = function(lhs, rhs)
+  vim.keymap.set("i", lhs, rhs, { expr = true, replace_keycodes = false })
+end
+
+if plugged("mini.pairs") then
+  map_bs("<c-h>", "v:lua.MiniPairs.bs()")
+  map_bs("<c-w>", 'v:lua.MiniPairs.bs("\23")')
+  map_bs("<c-u>", 'v:lua.MiniPairs.bs("\21")')
+end
+
 -- hover documentation custom scroll keymaps --
 if plugged("noice.nvim") and plugged("nvim-lspconfig") then
   vim.keymap.set("n", "<c-j>", function()
