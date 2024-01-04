@@ -9,3 +9,6 @@ data
 .neoconf.json
 minial.lua
 lazyvim.json
+lazy-lock.json.*
+lazy-lock.json_*
+bak/
