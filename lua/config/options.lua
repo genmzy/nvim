@@ -3,7 +3,18 @@
 -- Add any additional options here
 
 vim.g.autoformat = false
-vim.g.root_spec = { { ".git", "lua" }, "cwd", "lsp" }
+vim.g.root_spec = {
+  {
+    ".git", -- general
+    "go.mod", -- golang
+    "stylua.toml", -- lua
+    "build.gradle", -- java
+    "pom.xml", -- java
+    "Cargo.toml", -- rust
+  },
+  "cwd",
+  "lsp",
+}
 
 local opt = vim.opt
 
