@@ -27,3 +27,7 @@ opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.et = false
+opt.guicursor = "a:blinkon800"
+-- cursor
+opt.guicursor =
+  "n-v-c:underline,i-ci-ve:ver40,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
