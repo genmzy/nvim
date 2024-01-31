@@ -47,6 +47,7 @@ local redirect_mapper = {
   { [[\t]], "<leader>fT" }, -- float terminal
   { "<leader>cc", "gcc" }, -- comment current line
   { "<leader>cc", "gc", "v" }, -- virsual comment
+  { "<F4>", "<leader>cs" },
 }
 
 for _, map in ipairs(redirect_mapper) do
