@@ -23,7 +23,14 @@ return {
     theme = "tokyonight",
     strategy = { default = { frontend = "hover", backend = "youdao" } },
     frontend = {
-      default = { auto_play = false },
+      default = {
+        auto_play = false,
+        title = vim.fn.has("nvim-0.9") == 1 and {
+          { "", "TransTitleRound" },
+          { "󰊿 Trans", "TransTitle" },
+          { "", "TransTitleRound" },
+        } or nil, -- need nvim-0.9+
+      },
       hover = {
         order = {
           youdao = {
@@ -32,6 +39,20 @@ return {
             "definition",
             "web",
           },
+        },
+        icon = {
+          list = "●",
+          star = "",
+          notfound = "󰆆 ",
+          yes = "✔",
+          no = "",
+          cell = "■",
+          web = "󰖟 ",
+          tag = "",
+          pos = "",
+          exchange = "",
+          definition = "󰗊",
+          translation = "󰊿",
         },
       },
     },
