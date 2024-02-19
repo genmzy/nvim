@@ -12,8 +12,19 @@ return {
       },
     },
     sections = {
+      lualine_a = {
+        { "mode", separator = { left = "", right = "" } },
+      },
       lualine_b = {
         { "branch", icon = { "" } },
+      },
+      lualine_z = {
+        {
+          function()
+            return " " .. os.date("%R")
+          end,
+          separator = { left = "", right = "" },
+        },
       },
     },
   },
