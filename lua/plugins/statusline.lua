@@ -1,11 +1,13 @@
+-- general modes
 local alias = {
-  n = "N",
-  i = "I",
-  c = "C",
-  v = "V",
-  V = "VL",
-  s = "S",
-  R = "R",
+  n = "N", -- normal
+  i = "I", -- insert
+  c = "C", -- command
+  v = "V", -- visual
+  V = "VL", -- visual line
+  s = "S", -- select
+  R = "R", -- replace
+  [""] = "VB", -- visual block
 }
 
 return {
@@ -25,8 +27,7 @@ return {
       lualine_a = {
         {
           function()
-            return alias[vim.fn.mode()] or "VB"
-            -- return vim.fn.mode()
+            return alias[vim.fn.mode()] or "?"
           end,
           icon = "󰊠",
           separator = { left = "", right = "" },
