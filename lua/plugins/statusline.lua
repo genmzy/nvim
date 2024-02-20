@@ -1,3 +1,13 @@
+local alias = {
+  n = "N",
+  i = "I",
+  c = "C",
+  v = "V",
+  V = "VL",
+  s = "S",
+  R = "R",
+}
+
 return {
   "nvim-lualine/lualine.nvim",
   opts = {
@@ -13,10 +23,17 @@ return {
     },
     sections = {
       lualine_a = {
-        { "mode", separator = { left = "", right = "" } },
+        {
+          function()
+            return alias[vim.fn.mode()] or "VB"
+            -- return vim.fn.mode()
+          end,
+          icon = "󰊠",
+          separator = { left = "", right = "" },
+        },
       },
       lualine_b = {
-        { "branch", icon = { "" } },
+        { "branch", icon = { "󰀘" } },
       },
       lualine_z = {
         {
