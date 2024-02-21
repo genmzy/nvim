@@ -7,6 +7,7 @@ local alias = {
   V = "VL", -- visual line
   s = "S", -- select
   R = "R", -- replace
+  t = "T", -- terminal
   [""] = "VB", -- visual block
 }
 
