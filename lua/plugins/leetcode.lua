@@ -18,9 +18,8 @@ return {
       translate_problems = true,
     },
     lang = "golang",
-    storge = {
+    storage = {
       home = os.getenv("GOPATH") .. "/src/leetcode",
-      -- cache = os.getenv("GOPATH") .. "/src/leetcode_cache",
     },
   },
 }
