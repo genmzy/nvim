@@ -33,7 +33,7 @@ require("lazy").setup({
     -- navic
     { import = "lazyvim.plugins.extras.editor.navic" },
     -- import symbols outline
-    { import = "lazyvim.plugins.extras.editor.symbols-outline" },
+    { import = "lazyvim.plugins.extras.editor.outline" },
     -- import test
     { import = "lazyvim.plugins.extras.test.core" },
     -- import/override with your plugins

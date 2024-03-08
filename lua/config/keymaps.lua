@@ -45,8 +45,8 @@ local redirect_mapper = {
   { "<leader>gu", "<leader>ghr" }, -- git current
   { "<leader>gf", "<leader>gs" }, -- git stauts(files)
   { [[\t]], "<leader>fT" }, -- float terminal
-  { "<leader>cc", "gcc" }, -- comment current line
-  { "<leader>cc", "gc", "v" }, -- virsual comment
+  { [[\cc]], "gcc" }, -- comment current line
+  { [[\cc]], "gc", "v" }, -- virsual comment
   { "<F4>", "<leader>cs" },
 }
 
