@@ -12,3 +12,4 @@ lazyvim.json
 lazy-lock.json.*
 lazy-lock.json_*
 bak/
+local.lua

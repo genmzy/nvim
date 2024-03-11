@@ -21,6 +21,7 @@ return {
   dependencies = { "folke/trouble.nvim" },
   opts = {
     defaults = {
+      layout_strategy = (LocalConfig and LocalConfig.screen_horizontal) and "horizontal" or "vertical",
       scroll_strategy = "limit",
       prompt_prefix = "  ",
       mappings = {
