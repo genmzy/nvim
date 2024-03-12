@@ -22,6 +22,7 @@ return {
   opts = {
     defaults = {
       layout_strategy = (LocalConfig and LocalConfig.screen_horizontal) and "horizontal" or "vertical",
+      path_display = { shorten = 2, truncate = 3 },
       scroll_strategy = "limit",
       prompt_prefix = "  ",
       mappings = {
