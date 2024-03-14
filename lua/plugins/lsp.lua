@@ -6,7 +6,12 @@ local cwd = function()
   return vim.fn.getcwd()
 end
 
-local jdtls_dir = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
+-- mason general --
+local mason_dir = vim.fn.stdpath("data") .. "/mason"
+local mason_packages_dir = mason_dir .. "/packages"
+
+-- java --
+local jdtls_dir = mason_packages_dir .. "/jdtls"
 local lombok_path = jdtls_dir .. "/lombok.jar"
 
 return {
