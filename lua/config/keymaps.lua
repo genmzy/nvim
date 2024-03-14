@@ -162,7 +162,12 @@ if plugged("noice.nvim") and plugged("nvim-lspconfig") then
 end
 
 if plugged("nvim-treesitter-context") then
-  vim.keymap.set({ "n", "v" }, "g.", function()
-    require("treesitter-context").go_to_context()
-  end, { silent = true })
+  require("which-key").register({
+    ["g."] = {
+      function()
+        require("treesitter-context").go_to_context()
+      end,
+      "Goto context",
+    },
+  })
 end
