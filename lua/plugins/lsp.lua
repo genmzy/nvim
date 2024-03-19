@@ -36,8 +36,6 @@ return {
     opts = {
       root_dir = cwd,
       cmd = {
-        -- vim.fn.exepath("jdtls"),
-        -- "--jvm-arg=-javaagent:" .. "/home/waves/.m2/repository/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar",
         jdtls_dir .. "/jdtls",
         "--jvm-arg=-javaagent:" .. lombok_path,
         "--jvm-arg=-Xbootclasspath/a:" .. lombok_path,
