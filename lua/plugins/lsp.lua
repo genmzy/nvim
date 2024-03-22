@@ -54,7 +54,7 @@ return {
       },
       on_attach = function()
         -- (Re-)reads launch.json if present
-        if require("lazyvim.util").has("nvim-dap") and vim.fn.filereadable(".vscode/launch.json") then
+        if require("lazyvim.util").has("nvim-dap") and vim.fn.filereadable(".vscode/launch.json") == 1 then
           require("dap.ext.vscode").load_launchjs(nil, { java = { "java" } })
         end
       end,
