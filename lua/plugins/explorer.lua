@@ -17,18 +17,11 @@ local keymap = {
   end,
   ["l"] = "open",
   ["S"] = "open_vsplit",
-  ["s"] = "none",
-  -- ['S'] = 'split_with_window_picker',
-  -- ['s'] = 'vsplit_with_window_picker',
+  ["s"] = "noop",
   ["t"] = "open_tabnew",
-  -- ['<cr>'] = 'open_drop',
-  -- ['t'] = 'open_tab_drop',
   ["w"] = "open_with_window_picker",
-  --['P'] = 'toggle_preview', -- enter preview mode, which shows the current node without focusing
   ["h"] = "close_node",
-  -- ['C'] = 'close_all_subnodes',
   ["z"] = "close_all_nodes",
-  --['Z'] = 'expand_all_nodes',
   ["a"] = {
     "add",
     -- this command supports BASH style brace expansion ('x{a,b,c}' -> xa,xb,xc). see `:h neo-tree-file-actions` for details
@@ -50,6 +43,8 @@ local keymap = {
   ["?"] = "show_help",
   ["<"] = "prev_source",
   [">"] = "next_source",
+  ["<c-f>"] = "fuzzy_finder",
+  ["/"] = "noop",
 }
 
 return {
