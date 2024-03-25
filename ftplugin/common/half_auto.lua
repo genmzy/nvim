@@ -1,13 +1,13 @@
 --
--- index 2 and auto format
+-- index 2 and auto format common configurations
 --
 
-local opt = vim.opt
+local bo = vim.bo
 
-opt.softtabstop = 2
-opt.shiftwidth = 2
-opt.tabstop = 2
-opt.et = false
+bo.softtabstop = 2
+bo.shiftwidth = 2
+bo.tabstop = 2
+bo.et = false
 
 ---@diagnostic disable-next-line: inject-field
 vim.b.autoformat = true

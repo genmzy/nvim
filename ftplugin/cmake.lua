@@ -1,3 +1,7 @@
-local opt = vim.opt
+--
+-- cmake must use tab instead of spaces
+--
 
-opt.et = true
+local bo = vim.bo
+
+bo.et = true
