@@ -29,8 +29,8 @@ local redirect_mapper = {
   { "sN", "[d" }, -- prev diagnostic
   { "se", "]e" }, -- next error diagnostic
   { "sE", "[e" }, -- prev error diagnostic
-  { "sw", "]w" }, -- next warning diagnostic
-  { "sW", "[w" }, -- prev warning diagnostic
+  { "sv", "]w" }, -- next warning diagnostic
+  { "sV", "[w" }, -- prev warning diagnostic
   { "gi", "gI" }, -- go impletetaion
   { "gl", "gD" }, -- go declaraction
   { "sr", "<leader>cr" }, -- rename variable/def_name
@@ -53,6 +53,9 @@ local redirect_mapper = {
 for _, map in ipairs(redirect_mapper) do
   vim.keymap.set(map[3] or "n", map[1], map[2], map[4] or { remap = true })
 end
+-- require("which-key").register({
+--
+-- })
 
 -- end NOTE
 
@@ -126,6 +129,53 @@ for _, map in ipairs(keymapper) do
   vim.keymap.set(map[3] or "n", map[1], map[2], { noremap = true })
 end
 
+-- s-prefix
+local wk = require("which-key")
+wk.register({
+  s = {
+    n = "Next Diagnostic",
+    N = "Prev Diagnostic",
+    e = "Next Error",
+    E = "Prev Error",
+    v = "Next Warning",
+    V = "Prev Warning",
+    r = "Rename",
+    o = "Code Action",
+    d = "Workspace Diagnostics",
+    t = "ToDo list",
+    f = "Code Format",
+    w = "Next Window",
+    h = "Left Window",
+    j = "Down Window",
+    k = "Up Window",
+    l = "Right Window",
+    u = {
+      name = "Sudo",
+      r = "Read",
+      w = "Write",
+    },
+  },
+})
+-- leader-prefix
+wk.register({
+  r = "Docs",
+  g = {
+    n = "Next Hunk",
+    N = "Prev Hunk",
+    r = "Git Reference",
+    u = "Reset Chunk",
+    f = "Changed Files",
+  },
+  bb = "Buffers",
+  si = "History",
+  mk = "Marks",
+  n = "NoHlSearch",
+  z = "Unzip All",
+}, { prefix = "<leader>" })
+-- others
+wk.register({ ["\\"] = { t = "Float Terminal" } })
+wk.register({ ["\\"] = { c = { name = "+comments", c = "Comment This" } } }, { mode = { "n", "v" } })
+
 -- plugins keymaps --
 
 local plugged = require("lazyvim.util").has
@@ -169,5 +219,5 @@ if plugged("nvim-treesitter-context") then
       end,
       "Goto context",
     },
-  })
+  }, { mode = { "n", "v" } })
 end

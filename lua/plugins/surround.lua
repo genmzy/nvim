@@ -2,6 +2,9 @@
 -- fix conflict with java go super
 --
 
+local wk = require("which-key")
+wk.register({ gz = "+surrounds" })
+
 return {
   "echasnovski/mini.surround",
   opts = {

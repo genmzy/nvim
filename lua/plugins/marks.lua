@@ -1,3 +1,6 @@
+local wk = require("which-key")
+wk.register({ m = "+marks/translate" }, { prefix = "<leader>" })
+
 return {
   "chentoast/marks.nvim",
   opts = {
