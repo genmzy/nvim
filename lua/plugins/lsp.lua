@@ -38,7 +38,7 @@ return {
       cmd = {
         jdtls_dir .. "/jdtls",
         "--jvm-arg=-javaagent:" .. lombok_path,
-        "--jvm-arg=-Xbootclasspath/a:" .. lombok_path,
+        -- "--jvm-arg=-Xbootclasspath/a:" .. lombok_path,
       },
       jdtls = {
         settings = {
@@ -49,6 +49,8 @@ return {
               -- The `name` is NOT arbitrary, but must match one of the elements from `enum ExecutionEnvironment` in the link above
               runtimes = LocalConfig and LocalConfig.jdtls_runtimes or {},
             },
+            autobuild = { enabled = false },
+            trace = { server = "off" },
           },
         },
       },
