@@ -28,6 +28,7 @@ return {
       servers = {
         clangd = { root_dir = cwd },
         jdtls = { root_dir = cwd },
+        lua_ls = { root_dir = cwd },
       },
     },
   },
