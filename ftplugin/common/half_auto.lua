@@ -7,7 +7,7 @@ local bo = vim.bo
 bo.softtabstop = 2
 bo.shiftwidth = 2
 bo.tabstop = 2
-bo.et = false
+bo.et = true -- use space instead of tab
 
 ---@diagnostic disable-next-line: inject-field
 vim.b.autoformat = true
