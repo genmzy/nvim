@@ -30,3 +30,6 @@ if LocalConfig and LocalConfig.line_wrap then
 else
   opt.wrap = false
 end
+
+-- always set dark to disable autochange
+opt.background = "dark"
