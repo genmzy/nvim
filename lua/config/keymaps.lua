@@ -38,6 +38,10 @@ local redirect_mapper = {
   { "sd", "<leader>sD" }, -- workspace diagnostics
   { "st", "<leader>st" }, -- todo list in comments
   { "sf", "<leader>cf", { "n", "v" } }, -- code format
+  { "sm", "]f", { "n", "v" } },
+  { "sM", "[f", { "n", "v" } },
+  { "sc", "]c", { "n", "v" } },
+  { "sC", "[c", { "n", "v" } },
   { "<leader>r", vim.lsp.buf.hover, "n", {} }, -- hover documentation
   { "<leader>gn", "<leader>]h" }, -- git next hunk
   { "<leader>gN", "<leader>[h" }, -- git prev hunk
@@ -149,6 +153,10 @@ wk.register({
     j = "Down Window",
     k = "Up Window",
     l = "Right Window",
+    m = "Next Function",
+    M = "Prev Function",
+    c = "Next Class",
+    C = "Prev Class",
     u = {
       name = "Sudo",
       r = "Read",
@@ -165,6 +173,7 @@ wk.register({
     r = "Git Reference",
     u = "Reset Chunk",
     f = "Changed Files",
+    l = "Go Declaration",
   },
   bb = "Buffers",
   si = "History",
