@@ -173,7 +173,6 @@ wk.register({
     r = "Git Reference",
     u = "Reset Chunk",
     f = "Changed Files",
-    l = "Go Declaration",
   },
   bb = "Buffers",
   si = "History",
@@ -182,6 +181,7 @@ wk.register({
   z = "Unzip All",
 }, { prefix = "<leader>" })
 -- others
+wk.register({ g = { l = "Go Declaration" } })
 wk.register({ ["\\"] = { t = "Float Terminal" } })
 wk.register({ ["\\"] = { c = { name = "+comments", c = "Comment This" } } }, { mode = { "n", "v" } })
 
