@@ -19,6 +19,19 @@ end
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = { "folke/trouble.nvim" },
+  keys = {
+    {
+      "<leader><space>",
+      function()
+        if LazyVim.has("nvim-dap") and require("dap").status() ~= "" then
+          require("dap").continue()
+        else
+          LazyVim.telescope("files")()
+        end
+      end,
+      desc = "FindFile/DapContinue",
+    },
+  },
   opts = {
     defaults = {
       layout_strategy = (LocalConfig and LocalConfig.screen_horizontal) and "horizontal" or "vertical",
