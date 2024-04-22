@@ -24,10 +24,8 @@ return {
       "<leader><space>",
       function()
         if LazyVim.has("nvim-dap") and require("dap").status() ~= "" then
-          print("dap")
           require("dap").continue()
         else
-          print("telescope")
           LazyVim.telescope("files")()
         end
       end,
