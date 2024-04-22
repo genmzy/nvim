@@ -15,7 +15,6 @@ local unset_mapper = {
   { "<c-l>", nt },
   { "<leader>bb" },
   { "<esc><esc>", "t" }, -- disable this to not trigger which_key in fzf
-  { "<leader><space>", "n" },
 }
 
 for _, map in ipairs(unset_mapper) do
@@ -230,14 +229,4 @@ if plugged("nvim-treesitter-context") then
       "Goto context",
     },
   }, { mode = { "n", "v" } })
-end
-
-if plugged("telescope.nvim") and plugged("nvim-dap") then
-  vim.keymap.set("n", "<leader><space>", function()
-    if require("dap").status() ~= "" then
-      require("dap").continue()
-    else
-      LazyVim.telescope("files")
-    end
-  end, { silent = true, expr = true })
 end
