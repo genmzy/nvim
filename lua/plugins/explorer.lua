@@ -59,5 +59,6 @@ return {
       },
       mappings = keymap,
     },
+    filesystem = { group_empty_dirs = true },
   },
 }
