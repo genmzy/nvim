@@ -26,7 +26,18 @@ return {
       diagnostics = { virtual_text = false },
       root_dir = cwd,
       servers = {
-        clangd = { root_dir = cwd },
+        clangd = {
+          root_dir = cwd,
+          cmd = {
+            "clangd",
+            "--background-index",
+            "--clang-tidy",
+            "--header-insertion=never",
+            "--completion-style=detailed",
+            "--function-arg-placeholders",
+            "--fallback-style=llvm",
+          },
+        },
         jdtls = { root_dir = cwd },
         lua_ls = { root_dir = cwd },
       },
