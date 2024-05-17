@@ -25,6 +25,7 @@ return {
     opts = {
       diagnostics = { virtual_text = false },
       root_dir = cwd,
+      inlay_hints = { enabled = false },
       servers = {
         clangd = {
           root_dir = cwd,
