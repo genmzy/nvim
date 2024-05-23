@@ -9,11 +9,11 @@ end
 
 return {
   {
-    "L3MON4D3/LuaSnip",
+    "garymjr/nvim-snippets",
     -- disable all lazyvim luasnip keymaps for tab-insert and jump conflict
     keys = {
-      { "<tab>", false, mode = "i" },
-      { "<tab>", false, mode = "s" },
+      { "<tab>", false, mode = { "i", "s" } },
+      -- { "<tab>", false, mode = "s" },
       { "<s-tab>", false, mode = { "i", "s" } },
     },
   },
@@ -21,20 +21,22 @@ return {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       local cmp = require("cmp")
-      local luasnip = require("luasnip")
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<c-l>"] = cmp.mapping(function()
-          -- You could replace the jumpable() calls with locally_jumpable()
-          -- this way you will only jump inside the snippet region
-          -- DO NOT use expand_or_locally_jumpable, may trigger expand when need jump occasionally
-          if luasnip.locally_jumpable() then
-            luasnip.jump(1)
+          if not vim.snippet.active({ direction = 1 }) then
+            return "<c-l>"
           end
+          vim.schedule(function()
+            vim.snippet.jump(1)
+          end)
         end, { "i", "s" }),
         ["<c-o>"] = cmp.mapping(function()
-          if luasnip.locally_jumpable(-1) then
-            luasnip.jump(-1)
+          if not vim.snippet.active({ direction = -1 }) then
+            return "<c-o>"
           end
+          vim.schedule(function()
+            vim.snippet.jump(-1)
+          end)
         end, { "i", "s" }),
         ["<c-j>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
