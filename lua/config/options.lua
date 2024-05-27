@@ -33,3 +33,4 @@ end
 
 -- always set dark to disable autochange
 opt.background = "dark"
+opt.winblend = 15
