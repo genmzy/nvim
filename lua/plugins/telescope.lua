@@ -38,7 +38,7 @@ return {
   },
   opts = {
     defaults = {
-      winblend = 15,
+      -- winblend = 15, -- replaced by global configuration
       layout_strategy = (LocalConfig and LocalConfig.screen_horizontal) and "horizontal" or "vertical",
       layout_config = { vertical = { preview_cutoff = 0 }, horizontal = { preview_cutoff = 0 } },
       path_display = { shorten = 2, truncate = 3 },
