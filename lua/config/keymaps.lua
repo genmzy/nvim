@@ -57,9 +57,6 @@ local redirect_mapper = {
 for _, map in ipairs(redirect_mapper) do
   vim.keymap.set(map[3] or "n", map[1], map[2], map[4] or { remap = true })
 end
--- require("which-key").register({
---
--- })
 
 -- end NOTE
 
