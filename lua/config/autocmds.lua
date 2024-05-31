@@ -13,3 +13,5 @@ end
 hl_set_underline("LspReferenceRead")
 hl_set_underline("LspReferenceText")
 hl_set_underline("LspReferenceWrite")
+
+hl(0, "LspInlayHint", { fg = "#545c7e", underdashed = true })
