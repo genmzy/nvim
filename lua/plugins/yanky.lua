@@ -35,6 +35,7 @@ return {
     mappings.i["<c-k>"] = nil -- avoid <c-k> for telescope move
     mappings.i["<c-g>"] = nil -- avoid <c-k> for telescope move
     mappings.i["<cr>"] = p -- use <cr> inherit default <c-p> yank action
+    mappings.i["<s-cr>"] = P -- use <c-p> inherit default <c-k> yank action
     mappings.i["<c-r>"] = P -- use <c-p> inherit default <c-k> yank action
     return {
       highlight = { timer = 200 },
