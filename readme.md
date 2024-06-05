@@ -8,6 +8,3 @@
 	- [Sudo](https://github.com/lambdalisue/suda.vim): sudo write and sudo read for privileges improve
 	- [Translator](https://github.com/JuanZoran/Trans.nvim): Chinese translator plugin
 	- [WildFire](https://github.com/gcmt/wildfire.vim): Smart visual selection
-
-##### More
-- `I wanna see you after CoVID-2019` maybe out of date, we all lived through that terrible disaster, now it's marine nuclear pollution (Fxxking selfish Japanese politicians)
