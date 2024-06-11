@@ -227,3 +227,14 @@ if plugged("nvim-treesitter-context") then
     },
   }, { mode = { "n", "v" } })
 end
+
+if plugged("vim-dadbod-ui") then
+  print("plugged dadbod")
+  vim.keymap.del("n", "<leader>D")
+  require("which-key").register({
+    ["<leader>fd"] = {
+      "<cmd>tabnew<cr><cmd>DBUIToggle<cr>",
+      "DB Layout",
+    },
+  }, { mode = { "n" } })
+end
