@@ -27,10 +27,14 @@ return {
     {
       "<leader><space>",
       function()
-        if LazyVim.has("nvim-dap") and has_prefix(require("dap").status(), "Stopped at") then
+        if
+          LazyVim.has("nvim-dap")
+          and LazyVim.is_loaded("nvim-dap")
+          and has_prefix(require("dap").status(), "Stopped at")
+        then
           require("dap").continue()
         else
-          LazyVim.telescope("files")()
+          LazyVim.pick("files")()
         end
       end,
       desc = "FindFile/DapContinue",
