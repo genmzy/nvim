@@ -19,6 +19,11 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    keys = {
+      { "<tab>", false, mode = "i" },
+      { "<tab>", false, mode = "s" },
+      { "<s-tab>", false, mode = { "i", "s" } },
+    },
     opts = function(_, opts)
       local cmp = require("cmp")
       local luasnip = require("luasnip")

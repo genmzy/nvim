@@ -12,7 +12,7 @@ local function mselect(prompt_bufnr, _mode)
   if tele_not_selected(prompt_bufnr, _mode) then
     require("telescope.actions.set").select(prompt_bufnr, "default")
   else
-    require("trouble.providers.telescope").open_selected_with_trouble(prompt_bufnr, _mode)
+    require("trouble.sources.telescope").open(prompt_bufnr, _mode)
   end
 end
 
