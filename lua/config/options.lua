@@ -33,5 +33,5 @@ else
 end
 
 -- always set dark to disable autochange
-opt.background = "dark"
+opt.background = "light"
 opt.winblend = 15
