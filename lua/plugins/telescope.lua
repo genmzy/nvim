@@ -12,7 +12,7 @@ local function mselect(prompt_bufnr, _mode)
   if tele_not_selected(prompt_bufnr, _mode) then
     require("telescope.actions.set").select(prompt_bufnr, "default")
   else
-    require("trouble.providers.telescope").open_selected_with_trouble(prompt_bufnr, _mode)
+    require("trouble.sources.telescope").open(prompt_bufnr, _mode)
   end
 end
 
@@ -27,10 +27,14 @@ return {
     {
       "<leader><space>",
       function()
-        if LazyVim.has("nvim-dap") and has_prefix(require("dap").status(), "Stopped at") then
+        if
+          LazyVim.has("nvim-dap")
+          and LazyVim.is_loaded("nvim-dap")
+          and has_prefix(require("dap").status(), "Stopped at")
+        then
           require("dap").continue()
         else
-          LazyVim.telescope("files")()
+          LazyVim.pick("files")()
         end
       end,
       desc = "FindFile/DapContinue",
@@ -38,7 +42,7 @@ return {
   },
   opts = {
     defaults = {
-      winblend = 15,
+      -- winblend = 15, -- replaced by global configuration
       layout_strategy = (LocalConfig and LocalConfig.screen_horizontal) and "horizontal" or "vertical",
       layout_config = { vertical = { preview_cutoff = 0 }, horizontal = { preview_cutoff = 0 } },
       path_display = { shorten = 2, truncate = 3 },

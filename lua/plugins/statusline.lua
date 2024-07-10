@@ -32,6 +32,7 @@ return {
           end,
           icon = "󰊠",
           separator = { left = "", right = "" },
+          color = { gui = "bold" },
         },
       },
       lualine_b = {
@@ -43,6 +44,7 @@ return {
             return " " .. os.date("%R")
           end,
           separator = { left = "", right = "" },
+          color = { gui = "bold" },
         },
       },
     },
