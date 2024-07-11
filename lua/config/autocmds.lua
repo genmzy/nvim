@@ -4,19 +4,14 @@
 
 local hl = vim.api.nvim_set_hl
 
---[[
+local hl_cword = { bg = "#343434" }
 
-local hl_underline = { bg = "NONE", underline = true }
-
-local hl_set_underline = function(s)
-  hl(0, s, hl_underline)
+-- make cword color
+local hl_set_cword = function(s)
+  hl(0, s, hl_cword)
 end
+hl_set_cword("LspReferenceRead")
+hl_set_cword("LspReferenceText")
+hl_set_cword("LspReferenceWrite")
 
--- make cword underline
-hl_set_underline("LspReferenceRead")
-hl_set_underline("LspReferenceText")
-hl_set_underline("LspReferenceWrite")
-
-]]
-
-hl(0, "LspInlayHint", { fg = "#545c7e", underdashed = true })
+hl(0, "LspInlayHint", { fg = "#7c6f64", underdashed = true })
