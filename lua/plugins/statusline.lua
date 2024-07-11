@@ -14,6 +14,16 @@ local alias = {
 return {
   "nvim-lualine/lualine.nvim",
   opts = {
+    options = {
+      component_separators = {
+        left = "",
+        right = "",
+      },
+      section_separators = {
+        left = "",
+        right = "",
+      },
+    },
     sections = {
       lualine_a = {
         {
@@ -21,6 +31,10 @@ return {
             return alias[vim.fn.mode()] or "?"
           end,
           icon = "󰊠",
+          separator = {
+            -- left = "", -- some color display ircorrectly
+            right = "",
+          },
           color = { gui = "bold" },
         },
       },
@@ -32,6 +46,10 @@ return {
           function()
             return " " .. os.date("%R")
           end,
+          separator = {
+            left = "",
+            -- right = "",
+          },
           color = { gui = "bold" },
         },
       },

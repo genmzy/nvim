@@ -10,6 +10,7 @@ return {
     priority = 1000, -- make sure to load this before all the other start plugins
     -- Optional; default configuration will be used if setup isn't called.
     config = function()
+      local gruvbox = require("gruvbox").palette
       ---@diagnostic disable-next-line: missing-fields
       require("gruvbox").setup({
         ---@diagnostic disable-next-line: missing-fields
@@ -22,6 +23,7 @@ return {
           ["ErrorMsg"] = { bold = true },
           ["DiffText"] = { bold = true },
           ["Cursor"] = { bold = true },
+          ["GruvboxBlueSign"] = { bg = gruvbox.dark0 },
         },
       })
     end,
