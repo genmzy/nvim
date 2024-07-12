@@ -16,6 +16,7 @@ return {
         ---@diagnostic disable-next-line: missing-fields
         italic = { strings = false, emphasis = false },
         bold = false,
+        contrast = "hard",
         overrides = {
           ["PmenuSel"] = { bold = true },
           ["IncSearch"] = { bold = true },
@@ -23,7 +24,11 @@ return {
           ["ErrorMsg"] = { bold = true },
           ["DiffText"] = { bold = true },
           ["Cursor"] = { bold = true },
-          ["GruvboxBlueSign"] = { bg = gruvbox.dark0 },
+          ["Visual"] = { bg = gruvbox.dark0 },
+          ["StatusLine"] = { bg = gruvbox.dark0, fg = gruvbox.dark0 },
+          ["GruvboxBlueSign"] = { bg = gruvbox.dark0_hard },
+          ["GitSignsCurrentLineBlame"] = { fg = gruvbox.dark3 },
+          ["DiagnosticSignError"] = { bg = gruvbox.dark0_hard },
         },
       })
     end,

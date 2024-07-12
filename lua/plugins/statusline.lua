@@ -11,10 +11,13 @@ local alias = {
   [""] = "VB", -- visual block
 }
 
+local gb = require("statusline.gruvbox")
+
 return {
   "nvim-lualine/lualine.nvim",
   opts = {
     options = {
+      theme = gb,
       component_separators = {
         left = "",
         right = "",
@@ -32,7 +35,7 @@ return {
           end,
           icon = "󰊠",
           separator = {
-            -- left = "", -- some color display ircorrectly
+            left = "", -- some color display ircorrectly
             right = "",
           },
           color = { gui = "bold" },
@@ -48,7 +51,7 @@ return {
           end,
           separator = {
             left = "",
-            -- right = "",
+            right = "",
           },
           color = { gui = "bold" },
         },
