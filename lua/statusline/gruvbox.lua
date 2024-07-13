@@ -18,7 +18,7 @@ local hl = {}
 hl.normal = {
   a = { bg = colors.blue, fg = colors.black },
   b = { bg = colors.lightgray, fg = colors.blue },
-  c = { bg = colors.darkgray, fg = colors.white },
+  c = { bg = colors.darkgray, fg = colors.gray },
 }
 
 hl.insert = {
