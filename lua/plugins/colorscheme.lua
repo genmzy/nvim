@@ -28,7 +28,7 @@ return {
           ["Visual"] = { bg = gruvbox.dark0_soft },
           ["StatusLine"] = { bg = gruvbox.dark0, fg = gruvbox.dark0 },
           ["Pmenu"] = { bg = gruvbox.dark0_soft },
-          ["NormalFloat"] = { bg = gruvbox.dark0_hard },
+          ["NormalFloat"] = { bg = gruvbox.dark0_soft },
           ["GruvboxBlueSign"] = { bg = gruvbox.dark0_hard },
           ["GitSignsCurrentLineBlame"] = { fg = gruvbox.dark3 },
           ["DiagnosticSignError"] = { bg = gruvbox.dark0_hard, fg = gruvbox.neutral_red },
