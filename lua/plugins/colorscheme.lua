@@ -11,6 +11,7 @@ return {
     -- Optional; default configuration will be used if setup isn't called.
     config = function()
       local gruvbox = require("gruvbox").palette
+      -- vim.g["terminal_color_bg"] = gruvbox.dark0
       ---@diagnostic disable-next-line: missing-fields
       require("gruvbox").setup({
         ---@diagnostic disable-next-line: missing-fields
@@ -26,6 +27,8 @@ return {
           ["Cursor"] = { bold = true },
           ["Visual"] = { bg = gruvbox.dark0 },
           ["StatusLine"] = { bg = gruvbox.dark0, fg = gruvbox.dark0 },
+          ["Pmenu"] = { bg = gruvbox.dark0_soft },
+          ["NormalFloat"] = { bg = gruvbox.dark0_hard },
           ["GruvboxBlueSign"] = { bg = gruvbox.dark0_hard },
           ["GitSignsCurrentLineBlame"] = { fg = gruvbox.dark3 },
           ["DiagnosticSignError"] = { bg = gruvbox.dark0_hard },
