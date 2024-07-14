@@ -13,40 +13,45 @@ local alias = {
 
 return {
   "nvim-lualine/lualine.nvim",
-  opts = {
-    options = {
-      component_separators = {
-        left = "",
-        right = "",
+  opts = function(_, opts)
+    opts.options.component_separators = {
+      left = "",
+      right = "",
+    }
+    opts.options.section_separators = {
+      left = "",
+      right = "",
+    }
+    opts.sections.lualine_a = {
+      {
+        function()
+          return alias[vim.fn.mode()] or "?"
+        end,
+        icon = "󰊠",
+        separator = { left = "", right = "" },
+        color = { gui = "bold" },
       },
-      section_separators = {
-        left = "",
-        right = "",
+    }
+    opts.sections.lualine_b = {
+      { "branch", icon = { "󰀘" } },
+    }
+    table.insert(opts.sections.lualine_c, 1, {
+      function()
+        if vim.bo.modified and not require("util.colors").is_lazy_color() then
+          return "󰷥"
+        end
+        return ""
+      end,
+      color = LazyVim.ui.fg("Special"),
+    })
+    opts.sections.lualine_z = {
+      {
+        function()
+          return " " .. os.date("%R")
+        end,
+        separator = { left = "", right = "" },
+        color = { gui = "bold" },
       },
-    },
-    sections = {
-      lualine_a = {
-        {
-          function()
-            return alias[vim.fn.mode()] or "?"
-          end,
-          icon = "󰊠",
-          separator = { left = "", right = "" },
-          color = { gui = "bold" },
-        },
-      },
-      lualine_b = {
-        { "branch", icon = { "󰀘" } },
-      },
-      lualine_z = {
-        {
-          function()
-            return " " .. os.date("%R")
-          end,
-          separator = { left = "", right = "" },
-          color = { gui = "bold" },
-        },
-      },
-    },
-  },
+    }
+  end,
 }
