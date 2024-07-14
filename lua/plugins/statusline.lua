@@ -15,47 +15,41 @@ local gb = require("statusline.gruvbox")
 
 return {
   "nvim-lualine/lualine.nvim",
-  opts = {
-    options = {
-      theme = gb,
-      component_separators = {
-        left = "",
-        right = "",
+  opts = function(_, opts)
+    opts.options.theme = gb
+    opts.options.component_separators = {
+      left = "",
+      right = "",
+    }
+    opts.options.section_separators = {
+      left = "",
+      right = "",
+    }
+    opts.sections.lualine_a = {
+      {
+        function()
+          return alias[vim.fn.mode()] or "?"
+        end,
+        icon = "󰊠",
+        separator = { left = "", right = "" },
+        color = { gui = "bold" },
       },
-      section_separators = {
-        left = "",
-        right = "",
+    }
+    opts.sections.lualine_b = {
+      { "branch", icon = { "󰀘" } },
+    }
+    table.insert(
+      opts.sections.lualine_c,
+      { (vim.bo.modified and require("util.colors").is_lazy_color()) and "󰙏 " or "" }
+    )
+    opts.sections.lualine_z = {
+      {
+        function()
+          return " " .. os.date("%R")
+        end,
+        separator = { left = "", right = "" },
+        color = { gui = "bold" },
       },
-    },
-    sections = {
-      lualine_a = {
-        {
-          function()
-            return alias[vim.fn.mode()] or "?"
-          end,
-          icon = "󰊠",
-          separator = {
-            left = "", -- some color display ircorrectly
-            right = "",
-          },
-          color = { gui = "bold" },
-        },
-      },
-      lualine_b = {
-        { "branch", icon = { "󰀘" } },
-      },
-      lualine_z = {
-        {
-          function()
-            return " " .. os.date("%R")
-          end,
-          separator = {
-            left = "",
-            right = "",
-          },
-          color = { gui = "bold" },
-        },
-      },
-    },
-  },
+    }
+  end,
 }
