@@ -38,10 +38,15 @@ return {
     opts.sections.lualine_b = {
       { "branch", icon = { "󰀘" } },
     }
-    table.insert(
-      opts.sections.lualine_c,
-      { (vim.bo.modified and require("util.colors").is_lazy_color()) and "󰙏 " or "" }
-    )
+    table.insert(opts.sections.lualine_c, 1, {
+      function()
+        if vim.bo.modified and not require("util.colors").is_lazy_color() then
+          return "󰷥 "
+        end
+        return ""
+      end,
+      color = LazyVim.ui.fg("Special"),
+    })
     opts.sections.lualine_z = {
       {
         function()
