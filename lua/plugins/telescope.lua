@@ -16,10 +16,6 @@ local function mselect(prompt_bufnr, _mode)
   end
 end
 
-local function has_prefix(s, h)
-  return string.sub(s, 1, string.len(h)) == h
-end
-
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = { "folke/trouble.nvim" },
@@ -30,7 +26,7 @@ return {
         if
           LazyVim.has("nvim-dap")
           and LazyVim.is_loaded("nvim-dap")
-          and has_prefix(require("dap").status(), "Stopped at")
+          and require("util.str").has_prefix(require("dap").status(), "Stopped at")
         then
           require("dap").continue()
         else
