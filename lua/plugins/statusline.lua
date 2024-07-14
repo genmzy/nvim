@@ -41,7 +41,7 @@ return {
     table.insert(opts.sections.lualine_c, 1, {
       function()
         if vim.bo.modified and not require("util.colors").is_lazy_color() then
-          return "󰷥 "
+          return "󰷥"
         end
         return ""
       end,
