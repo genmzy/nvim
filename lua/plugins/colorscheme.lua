@@ -32,6 +32,7 @@ return {
           ["GruvboxBlueSign"] = { bg = gruvbox.dark0_hard },
           ["GitSignsCurrentLineBlame"] = { fg = gruvbox.dark3 },
           ["DiagnosticSignError"] = { bg = gruvbox.dark0_hard, fg = gruvbox.neutral_red },
+          ["NeoTreeRootName"] = { fg = gruvbox.gray, bold = true },
         },
       })
     end,

@@ -16,7 +16,7 @@ local colors = {
 local hl = {}
 
 hl.normal = {
-  a = { bg = colors.blue, fg = colors.black },
+  a = { bg = colors.blue, fg = colors.black, gui = "bold" },
   b = { bg = colors.lightgray, fg = colors.blue },
   c = { bg = colors.darkgray, fg = colors.gray },
 }
