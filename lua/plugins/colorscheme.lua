@@ -38,7 +38,12 @@ return {
           ["GruvboxAquaSign"] = { bg = "" },
           ["GruvboxPurpleSign"] = { bg = "" },
           ["CursorLineNr"] = { bg = "" },
+          ["LspReferenceRead"] = { bg = gruvbox.dark1 },
+          ["LspReferenceText"] = { bg = gruvbox.dark2 },
+          ["LspReferenceWrite"] = { bg = gruvbox.dark1 },
+          ["LspInlayHint"] = { fg = gruvbox.dark2 },
           ["NeoTreeRootName"] = { fg = gruvbox.gray, bold = true },
+          ["NeoTreeTitleBar"] = { fg = gruvbox.dark0_hard, bg = gruvbox.gray, bold = true },
         },
       })
     end,
