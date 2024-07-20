@@ -45,6 +45,7 @@ return {
           ["NeoTreeRootName"] = { fg = gruvbox.gray, bold = true },
           ["NeoTreeTitleBar"] = { fg = gruvbox.dark0_hard, bg = gruvbox.gray, bold = true },
           ["TelescopeMultiSelection"] = { fg = gruvbox.neutral_yellow },
+          ["@parameter"] = { fg = gruvbox.bright_aqua },
         },
       })
     end,
