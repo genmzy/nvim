@@ -2,17 +2,30 @@
 -- finder telescope
 --
 
+local actions = require("telescope.actions")
+
 local function tele_not_selected(prompt_bufnr, _)
   local action_state = require("telescope.actions.state")
   local picker = action_state.get_current_picker(prompt_bufnr)
   return #picker:get_multi_selection() == 0
 end
 
-local function mselect(prompt_bufnr, _mode)
+-- trouble select mselect or default
+local function tb_mselect(prompt_bufnr, _mode)
   if tele_not_selected(prompt_bufnr, _mode) then
-    require("telescope.actions.set").select(prompt_bufnr, "default")
+    actions.select_default(prompt_bufnr)
   else
     require("trouble.sources.telescope").open(prompt_bufnr, _mode)
+  end
+end
+
+-- quickfixlist select mselect or default
+local function qf_mselect(prompt_bufnr)
+  if tele_not_selected(prompt_bufnr, _) then
+    actions.select_default(prompt_bufnr)
+  else
+    actions.send_selected_to_qflist(prompt_bufnr)
+    actions.open_qflist(prompt_bufnr)
   end
 end
 
@@ -63,9 +76,9 @@ return {
           ["<c-a>"] = "toggle_all",
           -- NOTE: telescope yanky history mappings should override telescope <cr> mappings
           -- More specfics see plugins.yanky.lua
-          ["<cr>"] = "select_default",
-          ["<s-cr>"] = mselect,
-          ["<c-r>"] = mselect,
+          ["<cr>"] = qf_mselect,
+          ["<s-cr>"] = "select_default",
+          ["<c-r>"] = tb_mselect,
         },
       },
     },
