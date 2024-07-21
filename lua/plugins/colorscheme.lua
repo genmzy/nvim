@@ -19,6 +19,9 @@ return {
         bold = false,
         contrast = "hard",
         overrides = {
+          ["Delimiter"] = { fg = gruvbox.dark4 },
+          ["@namespace"] = { fg = gruvbox.bright_orange },
+          ["@operator"] = { fg = gruvbox.bright_orange },
           ["PmenuSel"] = { bold = true },
           ["IncSearch"] = { bold = true },
           ["Search"] = { bold = true },
