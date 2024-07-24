@@ -3,7 +3,9 @@
 --
 
 local wk = require("which-key")
-wk.register({ gz = "+surrounds" })
+wk.add({
+  { "gz", group = "+surrounds", icon = { icon = "", color = "orange" } },
+})
 
 return {
   "echasnovski/mini.surround",

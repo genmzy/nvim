@@ -1,5 +1,7 @@
 local wk = require("which-key")
-wk.register({ m = "+marks/translate" }, { prefix = "<leader>" })
+wk.add({
+  { "<leader>m", group = "+marks/translate", icon = { icon = "󰍒", color = "azure" } },
+})
 
 return {
   "chentoast/marks.nvim",
