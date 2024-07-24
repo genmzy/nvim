@@ -1,3 +1,7 @@
+--
+-- string util
+--
+
 local M = {}
 
 function M.has_prefix(s, h)

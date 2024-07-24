@@ -132,55 +132,58 @@ end
 
 -- s-prefix
 local wk = require("which-key")
-wk.register({
-  s = {
-    n = "Next Diagnostic",
-    N = "Prev Diagnostic",
-    e = "Next Error",
-    E = "Prev Error",
-    v = "Next Warning",
-    V = "Prev Warning",
-    r = "Rename",
-    o = "Code Action",
-    d = "Workspace Diagnostics",
-    t = "ToDo list",
-    f = "Code Format",
-    w = "Next Window",
-    h = "Left Window",
-    j = "Down Window",
-    k = "Up Window",
-    l = "Right Window",
-    m = "Next Function",
-    M = "Prev Function",
-    c = "Next Class",
-    C = "Prev Class",
-    u = {
-      name = "Sudo",
-      r = "Read",
-      w = "Write",
-    },
-  },
+wk.add({
+  mode = { "n", "v" },
+  { "s", group = "+link", icon = "" },
+  { "sn", desc = "Next Diagnostic" },
+  { "sN", desc = "Prev Diagnostic" },
+  { "se", desc = "Next Error" },
+  { "sE", desc = "Prev Error" },
+  { "sv", desc = "Next Warning" },
+  { "sV", desc = "Prev Warning" },
+  { "sr", desc = "Rename" },
+  { "so", desc = "Code Action" },
+  { "sd", desc = "Workspace Diagnostics" },
+  { "st", desc = "ToDo list" },
+  { "sf", desc = "Code Format" },
+  { "sw", desc = "Next Window" },
+  { "sh", desc = "Left Window" },
+  { "sj", desc = "Down Window" },
+  { "sk", desc = "Up Window" },
+  { "sl", desc = "Right Window" },
+  { "sm", desc = "Next Function" },
+  { "sM", desc = "Prev Function" },
+  { "sc", desc = "Next Class" },
+  { "sC", desc = "Prev Class" },
+  { "su", group = "Sudo" },
+  { "sur", desc = "Read" },
+  { "suw", desc = "Write" },
 })
+
 -- leader-prefix
-wk.register({
-  r = "Docs",
-  g = {
-    n = "Next Hunk",
-    N = "Prev Hunk",
-    r = "Git Reference",
-    u = "Reset Chunk",
-    f = "Changed Files",
-  },
-  bb = "Buffers",
-  si = "History",
-  mk = "Marks",
-  n = "NoHlSearch",
-  z = "Unzip All",
-}, { prefix = "<leader>" })
--- others
-wk.register({ g = { l = "Go Declaration" } })
-wk.register({ ["\\"] = { t = "Float Terminal" } })
-wk.register({ ["\\"] = { c = { name = "+comments", c = "Comment This" } } }, { mode = { "n", "v" } })
+wk.add({
+  { "<leader>bb", desc = "Buffers" },
+  { "<leader>gN", desc = "Prev Hunk" },
+  { "<leader>gf", desc = "Changed Files" },
+  { "<leader>gn", desc = "Next Hunk" },
+  { "<leader>gr", desc = "Git Reference" },
+  { "<leader>gu", desc = "Reset Chunk" },
+  { "<leader>mk", desc = "Marks" },
+  { "<leader>n", desc = "NoHlSearch" },
+  { "<leader>r", desc = "Docs", icon = { icon = "󰧮", color = "green" } },
+  { "<leader>si", desc = "History" },
+  { "<leader>z", desc = "Unzip All", icon = { icon = "", color = "red" } },
+  { "<leader>h", desc = "Man", icon = { icon = "󰙃", color = "purple" } },
+})
+
+-- other
+wk.add({
+  { "gl", desc = "Go Declaration" },
+  { "\\t", desc = "Float Terminal" },
+  { "\\c", group = "+comments", icon = { icon = "", color = "grey" }, mode = { "n", "v" } },
+  { "\\cc", desc = "Comment Toggle", icon = { icon = "", color = "grey" }, mode = { "n", "v" } },
+  { [[\\]], desc = "Place Holder", icon = { icon = "", color = "purple" } },
+})
 
 -- plugins keymaps --
 
@@ -218,23 +221,22 @@ if plugged("noice.nvim") and plugged("nvim-lspconfig") then
 end
 
 if plugged("nvim-treesitter-context") then
-  require("which-key").register({
-    ["g."] = {
+  require("which-key").add({
+    {
+      "g.",
       function()
         require("treesitter-context").go_to_context()
       end,
-      "Goto context",
+      desc = "Goto context",
+      mode = { "n", "v" },
     },
-  }, { mode = { "n", "v" } })
+  })
 end
 
 if plugged("vim-dadbod-ui") then
   print("plugged dadbod")
   vim.keymap.del("n", "<leader>D")
-  require("which-key").register({
-    ["<leader>fd"] = {
-      "<cmd>tabnew<cr><cmd>DBUIToggle<cr>",
-      "DB Layout",
-    },
-  }, { mode = { "n" } })
+  require("which-key").add({
+    { "<leader>fd", "<cmd>tabnew<cr><cmd>DBUIToggle<cr>", desc = "DB Layout" },
+  })
 end
