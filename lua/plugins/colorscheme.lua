@@ -28,7 +28,7 @@ return {
           ["ErrorMsg"] = { bold = true },
           ["DiffText"] = { bold = true },
           ["Cursor"] = { bold = true },
-          ["Visual"] = { bg = gruvbox.dark0_soft },
+          ["Visual"] = { bg = gruvbox.dark2 },
           ["StatusLine"] = { bg = gruvbox.dark0, fg = gruvbox.dark0 },
           ["Pmenu"] = { bg = gruvbox.dark0_soft },
           ["NormalFloat"] = { bg = gruvbox.dark0_soft },
