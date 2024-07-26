@@ -22,6 +22,7 @@ for _, map in ipairs(unset_mapper) do
 end
 
 local redirect_mapper = {
+  { "<c-a>", "<home>", "c" }, -- make command mode jump to home
   { "<leader>bb", "<leader>fb" }, -- buffer search
   { "<leader>si", "<leader>fr" }, -- history search
   { "<leader>mk", "<leader>sm" }, -- marks search
