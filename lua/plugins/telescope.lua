@@ -66,6 +66,7 @@ return {
           ["<a-l>"] = "preview_scrolling_right",
           ["<a-j>"] = "preview_scrolling_down",
           ["<a-k>"] = "preview_scrolling_up",
+          ["<a-a>"] = "toggle_all",
           ["<esc>"] = "close",
           ["<c-u>"] = false,
           ["<c-p>"] = false,
@@ -73,7 +74,6 @@ return {
           ["<c-d>"] = false,
           ["<a-t>"] = false,
           -- <c-t> for all entries to trouble
-          ["<c-a>"] = "toggle_all",
           -- NOTE: telescope yanky history mappings should override telescope <cr> mappings
           -- More specfics see plugins.yanky.lua
           ["<cr>"] = qf_mselect,
