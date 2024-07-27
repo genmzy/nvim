@@ -10,46 +10,50 @@ return {
     priority = 1000, -- make sure to load this before all the other start plugins
     -- Optional; default configuration will be used if setup isn't called.
     config = function()
-      local gruvbox = require("gruvbox").palette
-      -- vim.g["terminal_color_bg"] = gruvbox.dark0
+      local gb = require("gruvbox").palette
+      local overrides = {
+        ["Delimiter"] = { fg = gb.dark4 },
+        ["PmenuSel"] = { bold = true },
+        ["IncSearch"] = { bold = true },
+        ["Search"] = { bold = true },
+        ["ErrorMsg"] = { bold = true },
+        ["DiffText"] = { bold = true },
+        ["Cursor"] = { bold = true },
+        ["Visual"] = { bg = gb.dark2 },
+        ["StatusLine"] = { bg = gb.dark0, fg = gb.dark0 },
+        ["Pmenu"] = { bg = gb.dark0_soft },
+        ["NormalFloat"] = { bg = gb.dark0_soft },
+        ["GitSignsCurrentLineBlame"] = { fg = gb.dark3 },
+        ["CursorLineNr"] = { bg = "" },
+        ["LspReferenceRead"] = { bg = gb.dark1 },
+        ["LspReferenceText"] = { bg = gb.dark2 },
+        ["LspReferenceWrite"] = { bg = gb.dark1 },
+        ["LspInlayHint"] = { fg = gb.dark2 },
+        ["NeoTreeRootName"] = { fg = gb.gray, bold = true },
+        ["NeoTreeTitleBar"] = { fg = gb.dark0_hard, bg = gb.gray, bold = true },
+        ["TelescopeMultiSelection"] = { fg = gb.neutral_yellow },
+        ["@namespace"] = { fg = gb.bright_orange },
+        ["@operator"] = { fg = gb.bright_orange },
+        ["@parameter"] = { fg = gb.bright_aqua },
+      }
+
+      local gb_sign_color = { "Blue", "Red", "Green", "Yellow", "Orange", "Aqua", "Purple" }
+      for _, v in ipairs(gb_sign_color) do
+        overrides["Gruvbox" .. v .. "Sign"] = { bg = "" }
+      end
+
+      local md_hxxx_bg = { 0, "0_soft", 1, 2, 3, 4 }
+      for i, v in ipairs(md_hxxx_bg) do
+        overrides["RenderMarkdownH" .. i .. "Bg"] = { bg = gb["dark" .. v], bold = true }
+      end
+
       ---@diagnostic disable-next-line: missing-fields
       require("gruvbox").setup({
         ---@diagnostic disable-next-line: missing-fields
         italic = { strings = false, emphasis = false },
         bold = false,
         contrast = "hard",
-        overrides = {
-          ["Delimiter"] = { fg = gruvbox.dark4 },
-          ["@namespace"] = { fg = gruvbox.bright_orange },
-          ["@operator"] = { fg = gruvbox.bright_orange },
-          ["PmenuSel"] = { bold = true },
-          ["IncSearch"] = { bold = true },
-          ["Search"] = { bold = true },
-          ["ErrorMsg"] = { bold = true },
-          ["DiffText"] = { bold = true },
-          ["Cursor"] = { bold = true },
-          ["Visual"] = { bg = gruvbox.dark2 },
-          ["StatusLine"] = { bg = gruvbox.dark0, fg = gruvbox.dark0 },
-          ["Pmenu"] = { bg = gruvbox.dark0_soft },
-          ["NormalFloat"] = { bg = gruvbox.dark0_soft },
-          ["GitSignsCurrentLineBlame"] = { fg = gruvbox.dark3 },
-          ["GruvboxBlueSign"] = { bg = "" },
-          ["GruvboxRedSign"] = { bg = "" },
-          ["GruvboxGreenSign"] = { bg = "" },
-          ["GruvboxYellowSign"] = { bg = "" },
-          ["GruvboxOrangeSign"] = { bg = "" },
-          ["GruvboxAquaSign"] = { bg = "" },
-          ["GruvboxPurpleSign"] = { bg = "" },
-          ["CursorLineNr"] = { bg = "" },
-          ["LspReferenceRead"] = { bg = gruvbox.dark1 },
-          ["LspReferenceText"] = { bg = gruvbox.dark2 },
-          ["LspReferenceWrite"] = { bg = gruvbox.dark1 },
-          ["LspInlayHint"] = { fg = gruvbox.dark2 },
-          ["NeoTreeRootName"] = { fg = gruvbox.gray, bold = true },
-          ["NeoTreeTitleBar"] = { fg = gruvbox.dark0_hard, bg = gruvbox.gray, bold = true },
-          ["TelescopeMultiSelection"] = { fg = gruvbox.neutral_yellow },
-          ["@parameter"] = { fg = gruvbox.bright_aqua },
-        },
+        overrides = overrides,
       })
     end,
   },
