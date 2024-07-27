@@ -13,12 +13,6 @@ return {
       local gb = require("gruvbox").palette
       local overrides = {
         ["Delimiter"] = { fg = gb.dark4 },
-        ["PmenuSel"] = { bold = true },
-        ["IncSearch"] = { bold = true },
-        ["Search"] = { bold = true },
-        ["ErrorMsg"] = { bold = true },
-        ["DiffText"] = { bold = true },
-        ["Cursor"] = { bold = true },
         ["Visual"] = { bg = gb.dark2 },
         ["StatusLine"] = { bg = gb.dark0, fg = gb.dark0 },
         ["Pmenu"] = { bg = gb.dark0_soft },
@@ -47,10 +41,25 @@ return {
         overrides["RenderMarkdownH" .. i .. "Bg"] = { bg = gb["dark" .. v], bold = true }
       end
 
+      local gb_custom_bold = {
+        "PmenuSel",
+        "IncSearch",
+        "Search",
+        "ErrorMsg",
+        "DiffText",
+        "Cursor",
+        "markdownBold",
+        "markdownBoldItalic",
+        "@markup.strong",
+      }
+      for _, v in ipairs(gb_custom_bold) do
+        overrides[v] = { bold = true }
+      end
+
       ---@diagnostic disable-next-line: missing-fields
       require("gruvbox").setup({
         ---@diagnostic disable-next-line: missing-fields
-        italic = { strings = false, emphasis = false },
+        italic = { strings = false, emphasis = true },
         bold = false,
         contrast = "hard",
         overrides = overrides,
