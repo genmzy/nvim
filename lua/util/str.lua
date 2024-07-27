@@ -1,5 +1,5 @@
 --
--- string util
+-- string utils
 --
 
 local M = {}
