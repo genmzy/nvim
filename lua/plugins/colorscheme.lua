@@ -26,6 +26,7 @@ return {
         ["NeoTreeRootName"] = { fg = gb.gray, bold = true },
         ["NeoTreeTitleBar"] = { fg = gb.dark0_hard, bg = gb.gray, bold = true },
         ["TelescopeMultiSelection"] = { fg = gb.neutral_yellow },
+        ["IblScope"] = { fg = gb.light4 },
         ["@namespace"] = { fg = gb.bright_orange },
         ["@operator"] = { fg = gb.bright_orange },
         ["@parameter"] = { fg = gb.bright_aqua },
