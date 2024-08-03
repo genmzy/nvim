@@ -12,12 +12,7 @@ return {
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require("everforest").setup({
-        background = "soft",
-        colours_override = function(palette)
-          palette.blue = "#35989F" -- or 3482AC
-          palette.purple = "#DC5597"
-          palette.statusline1 = palette.green
-        end,
+        background = "hard",
         on_highlights = function(hl, palette)
           hl.TSParameter = { fg = palette.aqua, bg = palette.none, bold = false }
         end,
