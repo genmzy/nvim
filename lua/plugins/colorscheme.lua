@@ -14,6 +14,7 @@ return {
         LspReferenceText = { bold = true },
         LspReferenceWrite = { bold = true },
         PmenuSel = { fg = "#21222c", bg = "#8be9fd", bold = true },
+        TelescopeSelection = { fg = "#fef18c" },
         ["@punctuation"] = { fg = "#7f849c" },
         ["@punctuation.bracket"] = { fg = "#7f849c" },
         ["@punctuation.delimiter"] = { fg = "#7f849c" },
