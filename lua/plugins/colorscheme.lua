@@ -60,7 +60,7 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       require("gruvbox").setup({
         ---@diagnostic disable-next-line: missing-fields
-        italic = { strings = false, emphasis = true },
+        italic = { strings = false, emphasis = true, comments = false },
         bold = false,
         contrast = "hard",
         overrides = overrides,
