@@ -6,15 +6,15 @@ return {
   {
     "Mofiqul/dracula.nvim",
     config = {
-      italic_comment = true,
+      italic_comment = false,
       overrides = {
+        Special = { fg = "#69ff94" },
         NormalFloat = { bg = "#313244" },
         StatusLine = { bg = "#44475a" },
         LspReferenceRead = { bold = true },
         LspReferenceText = { bold = true },
         LspReferenceWrite = { bold = true },
         PmenuSel = { fg = "#21222c", bg = "#8be9fd", bold = true },
-        -- PmenuSbar = { bg = "#21222c" },
         Pmenu = { fg = "#f8f8f2", bg = "#21222c" },
         CmpItemKind = { fg = "#f8f8f2" },
         CmpItemAbbr = { fg = "#f8f8f2" },
@@ -28,6 +28,7 @@ return {
         ["@function.method"] = { fg = "#69ff94" },
         ["@function.macro"] = { fg = "#69ff94" },
         ["@operator"] = { fg = "#a4ffff" },
+        ["@type.builtin"] = { fg = "#8be9fd" },
       },
     },
   },
