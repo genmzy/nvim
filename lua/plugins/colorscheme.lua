@@ -12,6 +12,7 @@ return {
     config = function()
       local gb = require("gruvbox").palette
       local overrides = {
+        ["String"] = { fg = gb.neutral_green },
         ["Delimiter"] = { fg = gb.dark4 },
         ["Visual"] = { bg = gb.dark2 },
         ["StatusLine"] = { bg = gb.dark0, fg = gb.dark0 },
