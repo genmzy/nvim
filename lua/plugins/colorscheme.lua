@@ -5,7 +5,10 @@
 return {
   {
     "genmzy/deus.nvim",
-    opts = { disable_italic_comments = true },
+    opts = {
+      hard = true,
+      disable_italic_comments = true,
+    },
   },
 
   {
