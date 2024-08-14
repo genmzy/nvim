@@ -73,6 +73,8 @@ return {
           ["<c-n>"] = false,
           ["<c-d>"] = false,
           ["<a-t>"] = false,
+          ["<c-a>"] = { "<home>", type = "command" },
+          ["<c-e>"] = { "<end>", type = "command" },
           -- <c-t> for all entries to trouble
           -- NOTE: telescope yanky history mappings should override telescope <cr> mappings
           -- More specfics see plugins.yanky.lua
