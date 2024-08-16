@@ -9,5 +9,7 @@ return {
       { "<auto>", mode = "nixsotc" },
       { "s", mode = { "n", "v" } },
     },
+    preset = "modern",
+    win = { no_overlap = false },
   },
 }
