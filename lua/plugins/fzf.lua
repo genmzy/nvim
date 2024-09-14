@@ -29,7 +29,7 @@ return {
         border = "rounded",
       },
     }
-    vim.g.fzf_preview_window = { (LocalConfig and LocalConfig.screen_horizontal) and "down:50%:wrap" or "up:50%:wrap" }
+    vim.g.fzf_preview_window = { "up:50%:wrap" }
     vim.g.fzf_colors = {
       fg = { "fg", "Normal" },
       bg = { "bg", "Normal" },
