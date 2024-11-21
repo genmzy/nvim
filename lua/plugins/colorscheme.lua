@@ -20,6 +20,8 @@ return {
         end,
         on_highlights = function(hl, palette)
           hl.TSParameter = { fg = palette.aqua, bg = palette.none, bold = false }
+          hl.TSPunctBracket = { fg = palette.grey0, bg = palette.none, bold = false }
+          hl.jsonString = { link = "String" }
         end,
       })
     end,
