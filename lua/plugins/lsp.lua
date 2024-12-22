@@ -35,12 +35,19 @@ return {
             "--clang-tidy",
             "--header-insertion=never",
             "--completion-style=detailed",
-            "--function-arg-placeholders",
+            "--function-arg-placeholders=0",
             "--fallback-style=llvm",
           },
         },
         jdtls = { root_dir = cwd },
         lua_ls = { root_dir = cwd },
+        gopls = {
+          settings = {
+            gopls = {
+              usePlaceholders = false,
+            },
+          },
+        },
       },
     },
   },
