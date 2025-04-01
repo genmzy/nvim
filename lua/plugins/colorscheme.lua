@@ -8,6 +8,9 @@ return {
     styles = {
       comments = { italic = (LocalConfig and LocalConfig.italic and LocalConfig.italic.comments) or false },
       keywords = { italic = (LocalConfig and LocalConfig.italic and LocalConfig.italic.keyword) or false },
+      floats = "transparent",
+      sidebars = "transparent",
     },
+    transparent = true,
   },
 }

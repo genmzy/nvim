@@ -27,6 +27,10 @@ return {
     opts = function(_, opts)
       local cmp = require("cmp")
       local luasnip = require("luasnip")
+      opts.window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      }
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<c-l>"] = cmp.mapping(function()
           -- You could replace the jumpable() calls with locally_jumpable()
