@@ -3,13 +3,14 @@
 -- Add any additional options here
 
 vim.g.autoformat = false
-
 vim.g.root_spec = { "cwd" }
+vim.g.python3_host_prog = "/usr/bin/python3"
+vim.g.lazyvim_picker = "fzf"
 
 local opt = vim.opt
 
 vim.o.mouse = ""
-vim.g.python3_host_prog = "/usr/bin/python3"
+
 -- opt.listchars:append("eol:↵")
 opt.listchars:append("tab:¦ ")
 opt.listchars:append("trail:-")

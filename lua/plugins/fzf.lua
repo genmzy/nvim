@@ -3,50 +3,34 @@
 --
 
 return {
-  "junegunn/fzf.vim",
-  dependencies = {
-    "junegunn/fzf",
-    build = "./install --bin",
-  },
+  "fzf-lua",
   keys = {
+    { "<leader>sp", "<cmd>FzfLua grep_project<cr>", desc = "Grep Project" },
+    { "<leader>a", "<cmd>FzfLua grep_project<cr>", desc = "Grep Project" },
+    { "<leader>l", "<cmd>FzfLua grep_curbuf<cr>", desc = "Buffer Lines" },
     {
-      "<leader>a",
-      "<cmd>Rg<cr>",
-      desc = "Grep string",
-    },
-    {
-      "<leader>l",
-      "<cmd>BLines<cr>",
-      desc = "Buffer fuzzy find",
+      "<leader><space>",
+      function()
+        if
+          LazyVim.has("nvim-dap")
+          and LazyVim.is_loaded("nvim-dap")
+          and require("util.str").has_prefix(require("dap").status(), "Stopped at")
+        then
+          require("dap").continue()
+        else
+          LazyVim.pick("files")()
+        end
+      end,
+      desc = "FindFile/DapContinue",
     },
   },
-  config = function()
-    vim.g.fzf_layout = {
-      window = {
-        width = 0.9,
-        height = 0.9,
-        highlight = "TelescopeBorder",
-        border = "rounded",
+  opts = {
+    keymap = {
+      builtin = {
+        ["<A-j>"] = "preview-down",
+        ["<A-k>"] = "preview-up",
       },
-    }
-    vim.g.fzf_preview_window = { (LocalConfig and LocalConfig.screen_horizontal) and "down:50%:wrap" or "up:50%:wrap" }
-    vim.g.fzf_colors = {
-      fg = { "fg", "Normal" },
-      bg = { "bg", "Normal" },
-      ["fg+"] = { "fg", "CursorLine", "CursorColumn", "Normal" },
-      ["bg+"] = { "bg", "Keyword", "CursorColumn" },
-      ["hl+"] = { "fg", "Statement" },
-      info = { "fg", "PreProc" },
-      border = { "fg", "Ignore" },
-      prompt = { "fg", "Conditional" },
-      pointer = { "fg", "Exception" },
-      marker = { "fg", "Keyword" },
-      spinner = { "fg", "Label" },
-      header = { "fg", "Comment" },
-    }
-    vim.env.FZF_DEFAULT_OPTS = "--tabstop=2 --bind alt-j:preview-down,alt-k:preview-up"
-    vim.env.FZF_DEFAULT_COMMAND = "rg --files --hidden -g !.git/ -g !.github/"
-    vim.env.FZF_PREVIEW_COMMAND =
-      "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || cat {}) 2> /dev/null"
-  end,
+    },
+    winopts = { preview = { layout = "vertical" } },
+  },
 }
