@@ -5,16 +5,14 @@
 --| let &t_ut='' |--
 
 local nx = { "n", "x" } -- mode normal and visual (besides select)
-local nt = { "n", "t" } -- mode normal and terminal
 
 -- NOTE: only for lazyvim
 local unset_mapper = {
-  { "<c-h>", nt },
-  { "<c-j>", nt },
-  { "<c-k>", nt },
-  { "<c-l>", nt },
+  { "<c-h>", "n" },
+  { "<c-j>", "n" },
+  { "<c-k>", "n" },
+  { "<c-l>", "n" },
   { "<leader>bb" },
-  { "<esc><esc>", "t" }, -- disable this to not trigger which_key in fzf
 }
 
 for _, map in ipairs(unset_mapper) do
@@ -32,6 +30,7 @@ local redirect_mapper = {
   { "sE", "[e" }, -- prev error diagnostic
   { "sv", "]w" }, -- next warning diagnostic
   { "sV", "[w" }, -- prev warning diagnostic
+  { "sy", "<leader>p" }, -- yanky
   { "gi", "gI" }, -- go impletetaion
   { "gl", "gD" }, -- go declaraction
   { "sr", "<leader>cr" }, -- rename variable/def_name
@@ -43,7 +42,14 @@ local redirect_mapper = {
   { "sM", "[f", { "n", "v" } },
   { "sc", "]c", { "n", "v" } },
   { "sC", "[c", { "n", "v" } },
-  { "<leader>r", vim.lsp.buf.hover, "n", {} }, -- hover documentation
+  {
+    "<leader>r",
+    function()
+      vim.lsp.buf.hover()
+    end,
+    "n",
+    {},
+  }, -- hover documentation
   { "<leader>gn", "<leader>]h" }, -- git next hunk
   { "<leader>gN", "<leader>[h" }, -- git prev hunk
   { "<leader>gr", "<leader>ghb" }, -- git reference
