@@ -6,6 +6,7 @@ vim.g.autoformat = false
 vim.g.root_spec = { "cwd" }
 vim.g.python3_host_prog = "/usr/bin/python3"
 vim.g.lazyvim_picker = "fzf"
+vim.lsp.set_log_level("ERROR")
 
 local opt = vim.opt
 
