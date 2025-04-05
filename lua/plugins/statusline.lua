@@ -42,7 +42,7 @@ return {
         end
         return ""
       end,
-      color = LazyVim.ui.fg("Special"),
+      color = { fg = Snacks.util.color("Special") },
     })
     opts.sections.lualine_z = {
       {
