@@ -56,7 +56,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.yanky" },
     -- better file explorer
     { import = "lazyvim.plugins.extras.editor.snacks_explorer" },
-    { import = "lazyvim.plugins.extras.editor.snacks_picker" },
+    -- { import = "lazyvim.plugins.extras.editor.snacks_picker" },
     -- better rename
     { import = "lazyvim.plugins.extras.editor.inc-rename" },
     -- import test
