@@ -11,9 +11,9 @@ local logo = [[
  ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝     ╚═╝╚══════╝   ╚═╝   ]]
 
 return {
-  "nvimdev/dashboard-nvim",
+  "snacks.nvim",
   opts = {
     -- logo = string.rep("\n", 8) .. logo .. "\n\n"
-    config = { header = vim.split(string.rep("\n", 8) .. logo .. "\n\n", "\n") },
+    dashboard = { preset = { header = logo } },
   },
 }
