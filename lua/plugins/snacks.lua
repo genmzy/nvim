@@ -3,6 +3,15 @@
 --
 return {
   "snacks.nvim",
+  keys = {
+    {
+      "<leader>su",
+      function()
+        Snacks.picker.undo()
+      end,
+      desc = "Undotree",
+    },
+  },
   opts = {
     picker = {
       sources = {
