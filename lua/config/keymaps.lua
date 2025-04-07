@@ -241,7 +241,6 @@ if plugged("nvim-treesitter-context") then
 end
 
 if plugged("vim-dadbod-ui") then
-  print("plugged dadbod")
   vim.keymap.del("n", "<leader>D")
   require("which-key").add({
     { "<leader>fd", "<cmd>tabnew<cr><cmd>DBUIToggle<cr>", desc = "DB Layout" },
