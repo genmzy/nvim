@@ -34,6 +34,9 @@ else
   opt.wrap = false
 end
 
+-- set jumpopts to be stacked
+opt.jop = "stack"
+
 -- always set dark to disable autochange
 opt.background = "light"
 opt.winblend = 15
