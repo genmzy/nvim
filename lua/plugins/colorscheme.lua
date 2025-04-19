@@ -15,6 +15,7 @@ return {
     on_highlights = function(hl, c)
       hl["@lsp.type.namespace.go"] = { fg = "#86e1fc" }
       hl["@lsp.type.namespace.zig"] = { fg = "#86e1fc" }
+      hl["@lsp.type.string.zig"] = {}
     end,
   },
 }
