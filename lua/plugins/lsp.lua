@@ -48,6 +48,7 @@ return {
             },
           },
         },
+        zls = { settings = { enable_argument_placeholders = false } },
       },
     },
   },
