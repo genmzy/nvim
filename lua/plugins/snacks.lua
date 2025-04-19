@@ -1,5 +1,5 @@
 --
--- snacks explorer width
+-- snacks explorer
 --
 return {
   "snacks.nvim",
@@ -12,7 +12,7 @@ return {
       desc = "Undotree",
     },
   },
-  opts = {
+  config = {
     picker = {
       sources = {
         explorer = {
@@ -20,6 +20,14 @@ return {
             layout = {
               width = 30,
             },
+          },
+        },
+      },
+      win = {
+        -- input window
+        input = {
+          keys = {
+            ["<c-u>"] = { "<c-s-u>", mode = { "i" }, expr = true },
           },
         },
       },
