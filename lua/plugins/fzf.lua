@@ -30,6 +30,9 @@ return {
         ["<A-j>"] = "preview-down",
         ["<A-k>"] = "preview-up",
       },
+      fzf = {
+        ["ctrl-u"] = "unix-line-discard",
+      },
     },
     winopts = {
       preview = { layout = "vertical" },
