@@ -2,20 +2,19 @@
 -- tokyonight
 --
 
+vim.g.material_style = "palenight"
+
 return {
-  "tokyonight.nvim",
-  opts = {
-    styles = {
-      comments = { italic = (LocalConfig and LocalConfig.italic and LocalConfig.italic.comments) or false },
-      keywords = { italic = (LocalConfig and LocalConfig.italic and LocalConfig.italic.keyword) or false },
-      floats = "transparent",
-      sidebars = "transparent",
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "material",
     },
-    transparent = true,
-    on_highlights = function(hl, c)
-      hl["@lsp.type.namespace.go"] = { fg = "#86e1fc" }
-      hl["@lsp.type.namespace.zig"] = { fg = "#86e1fc" }
-      hl["@lsp.type.string.zig"] = {}
-    end,
+  },
+  {
+    "marko-cerovac/material.nvim",
+    opts = {
+      transparent_background = true,
+    },
   },
 }
