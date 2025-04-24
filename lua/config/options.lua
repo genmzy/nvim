@@ -38,5 +38,6 @@ end
 opt.jop = "stack"
 
 -- always set dark to disable autochange
-opt.background = "dark"
-opt.winblend = 15
+opt.background = "light"
+opt.winblend = 0
+opt.pumblend = 0
