@@ -20,7 +20,7 @@ return {
   dependencies = { "kkharji/sqlite.lua" },
   opts = {
     debug = false,
-    theme = "tokyonight",
+    theme = "default",
     strategy = { default = { frontend = "hover", backend = "youdao" } },
     frontend = {
       default = {
