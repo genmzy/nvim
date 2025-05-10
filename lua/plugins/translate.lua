@@ -21,7 +21,7 @@ return {
   opts = {
     debug = false,
     theme = "tokyonight",
-    strategy = { default = { frontend = "hover", backend = "youdao" } },
+    strategy = { default = { frontend = "hover", backend = "*" } },
     frontend = {
       default = {
         auto_play = false,
