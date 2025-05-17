@@ -35,9 +35,10 @@ return {
       },
     },
     winopts = {
-      preview = { layout = "vertical" },
+      preview = { layout = "vertical", border = "single" },
       width = 0.9,
       height = 0.9,
+      border = "single",
     },
   },
 }
