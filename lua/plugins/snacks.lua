@@ -28,6 +28,12 @@ return {
         input = {
           keys = {
             ["<c-u>"] = { "<c-s-u>", mode = { "i" }, expr = true },
+            ["<esc>"] = { "close", mode = { "i", "n" } },
+          },
+        },
+        list = {
+          keys = {
+            ["<esc>"] = { "close", mode = { "i", "n" } },
           },
         },
       },
