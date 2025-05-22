@@ -1,6 +1,7 @@
 --
 -- snacks explorer
 --
+
 return {
   "snacks.nvim",
   keys = {
