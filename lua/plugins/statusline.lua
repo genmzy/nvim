@@ -1,3 +1,7 @@
+--
+-- statusline
+--
+
 -- general modes
 local alias = {
   n = "N", -- normal
