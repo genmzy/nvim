@@ -4,8 +4,6 @@
 
 return {
   {
-    -- "bbenzikry/snazzybuddy.nvim",
-    -- dependencies = { "tjdevries/colorbuddy.nvim" },
     "genmzy/nvim-snazzy",
     dependencies = { "rktjmp/lush.nvim" },
   },
