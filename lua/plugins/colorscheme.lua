@@ -1,17 +1,16 @@
 --
--- snazzy
+-- embark
 --
 
 return {
   {
-    "genmzy/nvim-snazzy",
-    dependencies = { "rktjmp/lush.nvim" },
+    "genmzy/embark",
   },
   -- Configure LazyVim to load dracula
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "snazzy",
+      colorscheme = "embark",
     },
   },
 }

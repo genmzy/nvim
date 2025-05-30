@@ -4,4 +4,8 @@
 
 local hl = vim.api.nvim_set_hl
 
+hl(0, "LspReferenceRead", { bg = "NONE", underline = true })
+hl(0, "LspReferenceText", { bg = "NONE", underline = true })
+hl(0, "LspReferenceWrite", { bg = "NONE", underline = true })
+
 hl(0, "LspInlayHint", { fg = "#545c7e", underdashed = true })
