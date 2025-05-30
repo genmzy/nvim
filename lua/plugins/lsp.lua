@@ -23,7 +23,7 @@ return {
       keys[#keys + 1] = { "K", false }
     end,
     opts = {
-      diagnostics = { virtual_text = false, float = { border = "rounded" } },
+      diagnostics = { virtual_text = false, float = { border = "single" } },
       root_dir = cwd,
       inlay_hints = { enabled = false },
       servers = {
