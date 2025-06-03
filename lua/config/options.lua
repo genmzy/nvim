@@ -36,6 +36,7 @@ end
 
 -- set jumpopts to be stacked
 opt.jop = "stack"
+opt.winborder = "single"
 
 -- always set dark to disable autochange
 opt.background = "dark"
