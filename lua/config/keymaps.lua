@@ -53,6 +53,7 @@ local redirect_mapper = {
   { "<leader>gn", "<leader>]h" }, -- git next hunk
   { "<leader>gN", "<leader>[h" }, -- git prev hunk
   { "<leader>gr", "<leader>ghb" }, -- git reference
+  { "<leader>gR", "<leader>ghB" }, -- git reference
   { "<leader>gu", "<leader>ghr" }, -- git current
   { "<leader>gf", "<leader>gs" }, -- git stauts(files)
   { [[\t]], "<leader>fT" }, -- float terminal
@@ -173,7 +174,8 @@ wk.add({
   { "<leader>gN", desc = "Prev Hunk" },
   { "<leader>gf", desc = "Changed Files" },
   { "<leader>gn", desc = "Next Hunk" },
-  { "<leader>gr", desc = "Git Reference" },
+  { "<leader>gr", desc = "GitView Line" },
+  { "<leader>gR", desc = "GitView Buffer" },
   { "<leader>gu", desc = "Reset Chunk" },
   { "<leader>mk", desc = "Marks" },
   { "<leader>n", desc = "NoHlSearch" },
