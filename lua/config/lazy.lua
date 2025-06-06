@@ -33,22 +33,33 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.cmake" },
     { import = "lazyvim.plugins.extras.lang.toml" },
     { import = "lazyvim.plugins.extras.lang.sql" },
-    -- import telescope
-    { import = "lazyvim.plugins.extras.editor.telescope" },
+    { import = "lazyvim.plugins.extras.lang.rust" },
+    { import = "lazyvim.plugins.extras.lang.zig" },
+    -- editor search for fzf
+    { import = "lazyvim.plugins.extras.editor.fzf" },
     -- import debugger
     { import = "lazyvim.plugins.extras.dap" },
     -- import colors
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     { import = "lazyvim.plugins.extras.util.project" },
+    { import = "lazyvim.plugins.extras.util.dot" },
     -- navic
     { import = "lazyvim.plugins.extras.editor.navic" },
-    -- import symbols outline
+    -- symbols of lsp
     { import = "lazyvim.plugins.extras.editor.outline" },
+    -- better de/in-crement experience
+    { import = "lazyvim.plugins.extras.editor.dial" },
+    -- better yanky with fzf-lua
+    { import = "lazyvim.plugins.extras.coding.yanky" },
+    -- better file explorer
+    { import = "lazyvim.plugins.extras.editor.snacks_explorer" },
+    -- { import = "lazyvim.plugins.extras.editor.snacks_picker" },
+    -- better rename
+    { import = "lazyvim.plugins.extras.editor.inc-rename" },
     -- import test
     { import = "lazyvim.plugins.extras.test.core" },
     { import = "lazyvim.plugins.extras.util.startuptime" },
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
-    { import = "lazyvim.plugins.extras.coding.luasnip" },
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
     -- import/override with your plugins
     { import = "plugins" },
@@ -79,4 +90,5 @@ require("lazy").setup({
       },
     },
   },
+  ui = { border = "single" },
 })

@@ -5,16 +5,14 @@
 --| let &t_ut='' |--
 
 local nx = { "n", "x" } -- mode normal and visual (besides select)
-local nt = { "n", "t" } -- mode normal and terminal
 
 -- NOTE: only for lazyvim
 local unset_mapper = {
-  { "<c-h>", nt },
-  { "<c-j>", nt },
-  { "<c-k>", nt },
-  { "<c-l>", nt },
+  { "<c-h>", "n" },
+  { "<c-j>", "n" },
+  { "<c-k>", "n" },
+  { "<c-l>", "n" },
   { "<leader>bb" },
-  { "<esc><esc>", "t" }, -- disable this to not trigger which_key in fzf
 }
 
 for _, map in ipairs(unset_mapper) do
@@ -32,6 +30,7 @@ local redirect_mapper = {
   { "sE", "[e" }, -- prev error diagnostic
   { "sv", "]w" }, -- next warning diagnostic
   { "sV", "[w" }, -- prev warning diagnostic
+  { "sy", "<leader>p" }, -- yanky
   { "gi", "gI" }, -- go impletetaion
   { "gl", "gD" }, -- go declaraction
   { "sr", "<leader>cr" }, -- rename variable/def_name
@@ -43,10 +42,18 @@ local redirect_mapper = {
   { "sM", "[f", { "n", "v" } },
   { "sc", "]c", { "n", "v" } },
   { "sC", "[c", { "n", "v" } },
-  { "<leader>r", vim.lsp.buf.hover, "n", {} }, -- hover documentation
+  {
+    "<leader>r",
+    function()
+      vim.lsp.buf.hover()
+    end,
+    "n",
+    {},
+  }, -- hover documentation
   { "<leader>gn", "<leader>]h" }, -- git next hunk
   { "<leader>gN", "<leader>[h" }, -- git prev hunk
   { "<leader>gr", "<leader>ghb" }, -- git reference
+  { "<leader>gR", "<leader>ghB" }, -- git reference
   { "<leader>gu", "<leader>ghr" }, -- git current
   { "<leader>gf", "<leader>gs" }, -- git stauts(files)
   { [[\t]], "<leader>fT" }, -- float terminal
@@ -167,7 +174,8 @@ wk.add({
   { "<leader>gN", desc = "Prev Hunk" },
   { "<leader>gf", desc = "Changed Files" },
   { "<leader>gn", desc = "Next Hunk" },
-  { "<leader>gr", desc = "Git Reference" },
+  { "<leader>gr", desc = "GitView Line" },
+  { "<leader>gR", desc = "GitView Buffer" },
   { "<leader>gu", desc = "Reset Chunk" },
   { "<leader>mk", desc = "Marks" },
   { "<leader>n", desc = "NoHlSearch" },
@@ -235,9 +243,10 @@ if plugged("nvim-treesitter-context") then
 end
 
 if plugged("vim-dadbod-ui") then
-  print("plugged dadbod")
   vim.keymap.del("n", "<leader>D")
   require("which-key").add({
     { "<leader>fd", "<cmd>tabnew<cr><cmd>DBUIToggle<cr>", desc = "DB Layout" },
   })
 end
+
+vim.keymap.set("n", "<c-p>", "<cmd>Inspect<cr>", { noremap = true, silent = false })

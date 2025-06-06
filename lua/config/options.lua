@@ -3,13 +3,15 @@
 -- Add any additional options here
 
 vim.g.autoformat = false
-
 vim.g.root_spec = { "cwd" }
+vim.g.python3_host_prog = "/usr/bin/python3"
+vim.g.lazyvim_picker = "fzf"
+vim.lsp.set_log_level("ERROR")
 
 local opt = vim.opt
 
 vim.o.mouse = ""
-vim.g.python3_host_prog = "/usr/bin/python3"
+
 -- opt.listchars:append("eol:↵")
 opt.listchars:append("tab:¦ ")
 opt.listchars:append("trail:-")
@@ -28,6 +30,11 @@ opt.fencs = "utf-8,gbk,gb2312,gb18030"
 
 opt.wrap = false
 
+-- set jumpopts to be stacked
+opt.jop = "stack"
+-- opt.winborder = "single"
+
 -- always set dark to disable autochange
 opt.background = "dark"
-opt.winblend = 15
+opt.winblend = 0
+opt.pumblend = 0

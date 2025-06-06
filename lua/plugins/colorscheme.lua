@@ -1,13 +1,17 @@
 --
--- tokyonight
+-- snazzy
 --
 
 return {
-  "tokyonight.nvim",
-  opts = {
-    styles = {
-      comments = { italic = false },
-      keywords = { italic = false },
+  {
+    "genmzy/nvim-snazzy",
+    dependencies = { "rktjmp/lush.nvim" },
+  },
+  -- Configure LazyVim to load dracula
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "snazzy",
     },
   },
 }

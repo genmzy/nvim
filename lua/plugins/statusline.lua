@@ -1,3 +1,7 @@
+--
+-- statusline
+--
+
 -- general modes
 local alias = {
   n = "N", -- normal
@@ -14,6 +18,7 @@ local alias = {
 return {
   "nvim-lualine/lualine.nvim",
   opts = function(_, opts)
+    opts.options.theme = "snazzy"
     opts.options.component_separators = {
       left = "",
       right = "",
@@ -42,7 +47,7 @@ return {
         end
         return ""
       end,
-      color = LazyVim.ui.fg("Special"),
+      color = { fg = Snacks.util.color("Special") },
     })
     opts.sections.lualine_z = {
       {
