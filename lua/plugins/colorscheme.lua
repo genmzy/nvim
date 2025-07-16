@@ -19,6 +19,8 @@ return {
       hl["BlinkCmpLabelMatch"] = { fg = c.teal }
       hl["@label"] = { fg = c.magenta }
       hl["@string.escape"] = { fg = c.purple }
+      hl["@lsp.type.string.go"] = {}
+      hl["@character.printf"] = { fg = c.magenta }
     end,
   },
 }
