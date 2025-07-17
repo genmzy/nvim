@@ -28,11 +28,7 @@ opt.fileencodings = "utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1"
 opt.enc = "utf-8"
 opt.fencs = "utf-8,gbk,gb2312,gb18030"
 
-if LocalConfig and LocalConfig.line_wrap then
-  opt.wrap = true
-else
-  opt.wrap = false
-end
+opt.wrap = false
 
 -- set jumpopts to be stacked
 opt.jop = "stack"
