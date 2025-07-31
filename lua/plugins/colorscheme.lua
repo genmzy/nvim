@@ -21,6 +21,7 @@ return {
       hl["@string.escape"] = { fg = c.purple }
       hl["@lsp.type.string.go"] = {}
       hl["@character.printf"] = { fg = c.magenta }
+      hl["@constant.builtin"] = { fg = c.orange }
     end,
   },
 }
