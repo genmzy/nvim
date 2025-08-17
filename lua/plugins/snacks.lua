@@ -14,6 +14,7 @@ return {
     },
   },
   config = {
+    scroll = { enabled = false },
     terminal = {
       win = {
         keys = {
