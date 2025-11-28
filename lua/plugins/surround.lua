@@ -8,7 +8,7 @@ wk.add({
 })
 
 return {
-  "echasnovski/mini.surround",
+  "mini.surround",
   opts = {
     mappings = {
       add = "gza", -- Add surrounding in Normal and Visual modes
