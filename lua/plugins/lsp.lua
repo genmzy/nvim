@@ -2,10 +2,6 @@
 -- lsp specific
 --
 
-local cwd = function()
-  return vim.fn.getcwd()
-end
-
 -- mason general --
 local mason_dir = vim.fn.stdpath("data") .. "/mason"
 local mason_packages_dir = mason_dir .. "/packages"
@@ -17,18 +13,16 @@ local lombok_path = jdtls_dir .. "/lombok.jar"
 return {
   {
     "neovim/nvim-lspconfig",
-    init = function()
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      -- disable a keymap
-      keys[#keys + 1] = { "K", false }
-    end,
     opts = {
       diagnostics = { virtual_text = false, float = { border = "rounded" } },
-      root_dir = cwd,
       inlay_hints = { enabled = false },
       servers = {
+        ["*"] = {
+          keys = {
+            { "K", false },
+          },
+        },
         clangd = {
-          root_dir = cwd,
           cmd = {
             "clangd",
             "--background-index",
@@ -39,8 +33,6 @@ return {
             "--fallback-style=llvm",
           },
         },
-        jdtls = { root_dir = cwd },
-        lua_ls = { root_dir = cwd },
         gopls = {
           settings = {
             gopls = {
@@ -61,7 +53,6 @@ return {
   {
     "mfussenegger/nvim-jdtls",
     opts = {
-      root_dir = cwd,
       cmd = {
         jdtls_dir .. "/jdtls",
         "--jvm-arg=-javaagent:" .. lombok_path,
