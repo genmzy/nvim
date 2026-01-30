@@ -22,7 +22,8 @@ end
 local redirect_mapper = {
   { "<c-a>", "<home>", "c" }, -- make command mode jump to first char
   { "<leader>bb", "<leader>fb" }, -- buffer search
-  { "<leader>si", "<leader>fr" }, -- history search
+  { "<leader>si", "<leader>fR" }, -- history search
+  { "<leader>sI", "<leader>fr" }, -- history search
   { "<leader>mk", "<leader>sm" }, -- marks search
   { "sn", "]d" }, -- next diagnostic
   { "sN", "[d" }, -- prev diagnostic
