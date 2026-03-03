@@ -12,7 +12,7 @@ return {
     config = function()
       local gb = require("gruvbox").palette
       local overrides = {
-        ["String"] = { fg = gb.neutral_green },
+        -- ["String"] = { fg = gb.neutral_green },
         ["Delimiter"] = { fg = gb.dark4 },
         ["Visual"] = { bg = gb.dark2 },
         ["StatusLine"] = { bg = gb.dark0, fg = gb.dark0 },
@@ -25,6 +25,7 @@ return {
         ["LspReferenceWrite"] = { bg = gb.dark1 },
         ["LspInlayHint"] = { fg = gb.dark2 },
         ["NeoTreeRootName"] = { fg = gb.gray, bold = true },
+        ["FzfLuaDirPart"] = { fg = gb.gray },
         ["NeoTreeTitleBar"] = { fg = gb.dark0_hard, bg = gb.gray, bold = true },
         ["TelescopeMultiSelection"] = { fg = gb.neutral_yellow },
         ["IblScope"] = { fg = gb.light4 },
@@ -61,7 +62,7 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       require("gruvbox").setup({
         ---@diagnostic disable-next-line: missing-fields
-        italic = { strings = false, emphasis = true, comments = false },
+        italic = { strings = false, emphasis = true, comments = true },
         bold = false,
         contrast = "hard",
         overrides = overrides,
