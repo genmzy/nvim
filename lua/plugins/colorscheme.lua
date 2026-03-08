@@ -12,7 +12,7 @@ return {
     config = function()
       local gb = require("gruvbox").palette
       local overrides = {
-        -- ["String"] = { fg = gb.neutral_green },
+        ["String"] = { fg = "#a8a828" },
         ["Delimiter"] = { fg = gb.dark4 },
         ["Visual"] = { bg = gb.dark2 },
         ["StatusLine"] = { bg = gb.dark0, fg = gb.dark0 },
@@ -31,7 +31,7 @@ return {
         ["IblScope"] = { fg = gb.light4 },
         ["@namespace"] = { fg = gb.bright_orange },
         ["@operator"] = { fg = gb.bright_orange },
-        ["@parameter"] = { fg = gb.bright_aqua },
+        ["@parameter"] = { fg = gb.light2 },
       }
 
       local gb_sign_color = { "Blue", "Red", "Green", "Yellow", "Orange", "Aqua", "Purple" }
