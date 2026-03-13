@@ -24,6 +24,7 @@ return {
           hl.jsonString = { link = "String" }
           hl.FzfLuaDirPart = { fg = palette.grey2 }
           hl.BlinkCmpLabelMatch = { fg = palette.orange }
+          hl.LspSignatureActiveParameter = { bg = palette.bg4, bold = true }
         end,
       })
     end,
