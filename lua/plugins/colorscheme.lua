@@ -23,6 +23,7 @@ return {
           hl.TSPunctBracket = { fg = palette.grey0, bg = palette.none, bold = false }
           hl.jsonString = { link = "String" }
           hl.FzfLuaDirPart = { fg = palette.grey2 }
+          hl.BlinkCmpLabelMatch = { fg = palette.orange }
         end,
       })
     end,
