@@ -2,6 +2,8 @@
 -- noice
 --
 
+local single = { opts = { border = "single" } }
+
 return {
   "folke/noice.nvim",
 
@@ -16,6 +18,11 @@ return {
           },
         },
       },
+    },
+    cmdline = single,
+    -- messages = single,
+    views = {
+      popup = { border = { style = "single" } },
     },
   },
 }
