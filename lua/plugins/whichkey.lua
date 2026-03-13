@@ -10,6 +10,9 @@ return {
       { "s", mode = { "n", "v" } },
     },
     preset = "modern",
-    win = { no_overlap = false },
+    win = {
+      no_overlap = false,
+      border = "single",
+    },
   },
 }
