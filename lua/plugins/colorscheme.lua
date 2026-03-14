@@ -55,6 +55,7 @@ return {
           hl.BlinkCmpLabelMatch = { fg = palette.orange }
           hl.LspSignatureActiveParameter = { bg = palette.bg4, bold = true }
           hl.BlinkCmpMenuSelection = { bg = palette.bg4, bold = true }
+          hl.NonText = { fg = palette.grey0 }
           for k, v in pairs(kind) do
             if tonumber(k) then
               hl["BlinkCmpKind" .. v] = { link = "TS" .. v }
