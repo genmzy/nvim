@@ -2,6 +2,35 @@
 -- everforest
 --
 
+local kind = {
+  Text = "Normal",
+  Class = "Lsp",
+  Interface = "Orange",
+  Module = "Yellow",
+  Unit = "Purple",
+  Enum = "Green",
+  Snippet = "Aqua",
+  Color = "Normal",
+  File = "Normal",
+  Reference = "Aqua",
+  Folder = "Blue",
+  EnumMember = "Purple",
+  Struct = "Yellow",
+  Event = "Orange",
+  TypeParameter = "TSParameter",
+
+  "Method",
+  "Function",
+  "Constructor",
+  "Field",
+  "Variable",
+  "Property",
+  "Value",
+  "Keyword",
+  "Constant",
+  "Operator",
+}
+
 return {
   {
     "neanias/everforest-nvim",
@@ -25,6 +54,14 @@ return {
           hl.FzfLuaDirPart = { fg = palette.grey2 }
           hl.BlinkCmpLabelMatch = { fg = palette.orange }
           hl.LspSignatureActiveParameter = { bg = palette.bg4, bold = true }
+          hl.BlinkCmpMenuSelection = { bg = palette.bg4, bold = true }
+          for k, v in pairs(kind) do
+            if tonumber(k) then
+              hl["BlinkCmpKind" .. v] = { link = "TS" .. v }
+            else
+              hl["BlinkCmpKind" .. k] = { link = v }
+            end
+          end
         end,
       })
     end,
