@@ -12,7 +12,7 @@ return {
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require("everforest").setup({
-        background = "soft",
+        background = "medium",
         colours_override = function(palette)
           palette.blue = "#35989F" -- or 3482AC
           palette.purple = "#DC5597"
