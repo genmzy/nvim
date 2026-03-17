@@ -12,7 +12,12 @@ return {
   {
     "catppuccin",
     opts = {
-      transparent_background = false,
+      custom_highlights = function(colors)
+        return {
+          PmenuMatch = { fg = colors.lavender },
+          Search = { bg = colors.lavender, fg = colors.base },
+        }
+      end,
     },
   },
 }
