@@ -6,13 +6,13 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-macchiato",
+      colorscheme = "catppuccin-mocha",
     },
   },
   {
     "catppuccin",
     opts = {
-      transparent_background = true,
+      transparent_background = false,
     },
   },
 }
