@@ -266,5 +266,3 @@ if vim.fn.executable("lazygit") then
     })
   end, { desc = "Lazygit (cwd)" })
 end
-
-vim.keymap.set("n", "<c-p>", "<cmd>Inspect<cr>", { noremap = true, silent = false })
