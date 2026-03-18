@@ -14,8 +14,9 @@ return {
     opts = {
       custom_highlights = function(colors)
         return {
-          PmenuMatch = { fg = colors.lavender },
+          PmenuMatch = { fg = colors.lavender, bold = true },
           Search = { bg = colors.lavender, fg = colors.base },
+          Comment = { fg = colors.surface2 },
         }
       end,
     },
