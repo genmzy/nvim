@@ -23,7 +23,7 @@ return {
         },
         formats = {
           header = function()
-            return { require("calendar").getCalendar(), align = "center", hl = "Special" }
+            return { require("calendar").getCalendar(), align = "center", hl = "PmenuMatch" }
           end,
         },
       },
