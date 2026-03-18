@@ -3,7 +3,7 @@
 --
 
 return {
-  { "ds1sqe/Calendar.nvim" },
+  { "genmzy/Calendar.nvim" },
   {
     "snacks.nvim",
     opts = {
@@ -23,7 +23,7 @@ return {
         },
         formats = {
           header = function()
-            return { require("calendar").getCalendar(), align = "center" }
+            return { require("calendar").getCalendar(), align = "center", hl = "Special" }
           end,
         },
       },
