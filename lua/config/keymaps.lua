@@ -249,5 +249,3 @@ if plugged("vim-dadbod-ui") then
     { "<leader>fd", "<cmd>tabnew<cr><cmd>DBUIToggle<cr>", desc = "DB Layout" },
   })
 end
-
-vim.keymap.set("n", "<c-p>", "<cmd>Inspect<cr>", { noremap = true, silent = false })
