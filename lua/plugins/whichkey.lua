@@ -12,7 +12,6 @@ return {
     preset = "modern",
     win = {
       no_overlap = false,
-      border = "single",
     },
   },
 }

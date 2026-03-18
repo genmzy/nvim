@@ -250,4 +250,21 @@ if plugged("vim-dadbod-ui") then
   })
 end
 
+if vim.fn.executable("lazygit") then
+  local map = LazyVim.safe_keymap_set
+
+  map("n", "<leader>gg", function()
+    Snacks.lazygit({
+      cwd = LazyVim.root.git(),
+      config = { gui = { border = "rounded" } },
+    })
+  end, { desc = "Lazygit (Root Dir)" })
+
+  map("n", "<leader>gG", function()
+    Snacks.lazygit({
+      config = { gui = { border = "rounded" } },
+    })
+  end, { desc = "Lazygit (cwd)" })
+end
+
 vim.keymap.set("n", "<c-p>", "<cmd>Inspect<cr>", { noremap = true, silent = false })

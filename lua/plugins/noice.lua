@@ -11,12 +11,11 @@ return {
         views = {
           hover = {
             border = {
-              style = "single",
+              style = "rounded",
             },
           },
         },
       },
     },
-    cmdline = { opts = { border = "single" } },
   },
 }

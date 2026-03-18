@@ -38,11 +38,11 @@ return {
         -- ignore c-w(close-and-fallback) and c-u(close-fallabck), c-e(close) for blink-cmp support it already
       },
       completion = {
-        menu = { border = "single", winblend = 0 },
-        documentation = { window = { border = "single" } },
+        menu = { border = "rounded", winblend = 0 },
+        documentation = { window = { border = "rounded" } },
         trigger = { show_in_snippet = false },
       },
-      signature = { window = { border = "single" } },
+      -- signature = { window = { border = "single" } },
     },
   },
 }

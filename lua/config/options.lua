@@ -32,7 +32,7 @@ opt.wrap = false
 
 -- set jumpopts to be stacked
 opt.jop = "stack"
--- opt.winborder = "single"
+opt.winborder = "rounded"
 
 -- always set dark to disable autochange
 opt.background = "light"
