@@ -4,15 +4,15 @@
 
 -- general modes
 local alias = {
-  n = "N", -- normal
-  i = "I", -- insert
-  c = "C", -- command
-  v = "V", -- visual
-  V = "VL", -- visual line
-  s = "S", -- select
-  R = "R", -- replace
-  t = "T", -- terminal
-  [""] = "VB", -- visual block
+  n = "󰰓", -- normal
+  i = "󰰄", -- insert
+  c = "󰯲", -- command
+  v = "󰰫", -- visual
+  V = "󰰍", -- visual line
+  s = "󰰢", -- select
+  R = "󰰟", -- replace
+  t = "󰰥", -- terminal
+  [""] = "󰯯", -- visual block
 }
 
 local gb = require("statusline.gruvbox")
@@ -40,17 +40,16 @@ return {
       },
     }
     opts.sections.lualine_b = {
-      { "branch", icon = { "󰀘" } },
+      { "branch", icon = { "󰘬" } },
     }
-    table.insert(opts.sections.lualine_c, 1, {
-      function()
-        if vim.bo.modified and not require("util.colors").is_lazy_color() then
-          return "󰷥"
-        end
-        return ""
-      end,
-      color = { fg = Snacks.util.color("Special") },
-    })
+    if not require("util.colors").is_lazy_color() then
+      table.insert(opts.sections.lualine_c, 1, {
+        function()
+          return vim.bo.modified and "󰷥" or ""
+        end,
+        color = { fg = Snacks.util.color("Special") },
+      })
+    end
     opts.sections.lualine_z = {
       {
         function()
