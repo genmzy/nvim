@@ -20,6 +20,9 @@ return {
         ["*"] = {
           keys = {
             { "K", false },
+            { "<c-k>", false, mode = "i" },
+            -- stylua: ignore
+            { "<c-p>", function() return vim.lsp.buf.signature_help() end, mode = "i" },
           },
         },
         clangd = {
