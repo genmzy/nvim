@@ -25,15 +25,15 @@ return {
         ["<S-Tab>"] = { "select_prev", "fallback" },
         ["<C-l>"] = { "snippet_forward" },
         ["<C-o>"] = { "snippet_backward", "fallback" },
-        ["<C-j>"] = { "select_next", "fallback" },
-        ["<C-k>"] = { "select_prev", "fallback" },
+        -- c-j and c-k disable fallback
+        ["<C-j>"] = { "select_next" },
+        ["<C-k>"] = { "select_prev" },
+        -- disable blink default c-p select prev, keep c-n select next
+        ["<C-p>"] = {},
         ["<C-i>"] = {
           function(cmp)
-            if has_words_before() then
-              return cmp.show_and_insert()
-            end
+            return has_words_before() and cmp.show_and_insert()
           end,
-          "fallback",
         },
         -- ignore c-w(close-and-fallback) and c-u(close-fallabck), c-e(close) for blink-cmp support it already
       },
