@@ -3,8 +3,12 @@
 --
 
 local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  local col = vim.api.nvim_win_get_cursor(0)[2]
+  if col == 0 then
+    return false
+  end
+  local line = vim.api.nvim_get_current_line()
+  return line:sub(col, col):match("%s") == nil
 end
 
 return {
