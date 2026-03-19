@@ -8,11 +8,12 @@ local alias = {
   i = "󰰄", -- insert
   c = "󰯲", -- command
   v = "󰰫", -- visual
-  V = "󰰍", -- visual line
+  V = "󰰫 󰰍", -- visual line
   s = "󰰢", -- select
+  S = "󰰢 󰰍", -- select line
   R = "󰰟", -- replace
   t = "󰰥", -- terminal
-  [""] = "󰯯", -- visual block
+  [""] = "󰰫 󰯯", -- visual block
 }
 
 return {
@@ -29,7 +30,7 @@ return {
     opts.sections.lualine_a = {
       {
         function()
-          return alias[vim.fn.mode()] or "?"
+          return alias[vim.fn.mode()] or ""
         end,
         icon = "󰊠",
         separator = { left = "", right = "" },
