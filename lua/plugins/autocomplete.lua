@@ -18,7 +18,7 @@ return {
       keymap = {
         preset = "enter",
         ["<C-l>"] = { "accept", "snippet_forward" },
-        ["<C-o>"] = { "snippet_backward", "fallback" },
+        ["<C-o>"] = { "snippet_backward" },
         -- c-j and c-k disable fallback
         ["<C-j>"] = { "select_next", "fallback" },
         ["<C-k>"] = { "select_prev" },
