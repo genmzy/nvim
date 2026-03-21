@@ -17,20 +17,10 @@ return {
     opts = {
       keymap = {
         preset = "enter",
-        ["<Tab>"] = {
-          "select_next",
-          function(cmp)
-            if has_words_before() then
-              return cmp.show_and_insert()
-            end
-          end,
-          "fallback",
-        },
-        ["<S-Tab>"] = { "select_prev", "fallback" },
-        ["<C-l>"] = { "snippet_forward" },
+        ["<C-l>"] = { "accept", "snippet_forward" },
         ["<C-o>"] = { "snippet_backward", "fallback" },
         -- c-j and c-k disable fallback
-        ["<C-j>"] = { "select_next" },
+        ["<C-j>"] = { "select_next", "fallback" },
         ["<C-k>"] = { "select_prev" },
         -- disable blink default c-p select prev, keep c-n select next
         ["<C-p>"] = {},
