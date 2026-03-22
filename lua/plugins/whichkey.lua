@@ -7,7 +7,7 @@ return {
   opts = {
     triggers = {
       { "<auto>", mode = "nixsotc" },
-      { "s", mode = { "n", "v" } },
+      { "s", mode = { "n", "x" } },
     },
     preset = "modern",
     win = {
