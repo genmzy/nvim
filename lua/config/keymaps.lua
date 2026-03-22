@@ -38,11 +38,11 @@ local redirect_mapper = {
   { "so", "<leader>ca" }, -- code action
   { "sd", "<leader>sD" }, -- workspace diagnostics
   { "st", "<leader>st" }, -- todo list in comments
-  { "sf", "<leader>cf", { "n", "v" } }, -- code format
-  { "sm", "]f", { "n", "v" } },
-  { "sM", "[f", { "n", "v" } },
-  { "sc", "]c", { "n", "v" } },
-  { "sC", "[c", { "n", "v" } },
+  { "sf", "<leader>cf", nx }, -- code format
+  { "sm", "]f", nx },
+  { "sM", "[f", nx },
+  { "sc", "]c", nx },
+  { "sC", "[c", nx },
   {
     "<leader>r",
     function()
@@ -59,7 +59,7 @@ local redirect_mapper = {
   { "<leader>gf", "<leader>gs" }, -- git stauts(files)
   { [[\t]], "<leader>fT" }, -- float terminal
   { [[\cc]], "gcc" }, -- comment current line
-  { [[\cc]], "gc", "v" }, -- virsual comment
+  { [[\cc]], "gc", "x" }, -- virsual comment
   { "<F4>", "<leader>cs" },
 }
 
@@ -142,7 +142,10 @@ end
 -- s-prefix
 local wk = require("which-key")
 wk.add({
-  mode = { "n", "v" },
+  mode = {
+    "n",
+    --[["x"]]
+  },
   { "s", group = "+link", icon = "" },
   { "sn", desc = "Next Diagnostic" },
   { "sN", desc = "Prev Diagnostic" },
@@ -190,8 +193,8 @@ wk.add({
 wk.add({
   { "gl", desc = "Go Declaration" },
   { "\\t", desc = "Float Terminal" },
-  { "\\c", group = "+comments", icon = { icon = "", color = "grey" }, mode = { "n", "v" } },
-  { "\\cc", desc = "Comment Toggle", icon = { icon = "", color = "grey" }, mode = { "n", "v" } },
+  { "\\c", group = "+comments", icon = { icon = "", color = "grey" }, mode = nx },
+  { "\\cc", desc = "Comment Toggle", icon = { icon = "", color = "grey" }, mode = nx },
   { [[\\]], desc = "Place Holder", icon = { icon = "", color = "purple" } },
 })
 
@@ -238,7 +241,7 @@ if plugged("nvim-treesitter-context") then
         require("treesitter-context").go_to_context()
       end,
       desc = "Goto context",
-      mode = { "n", "v" },
+      mode = nx,
     },
   })
 end
