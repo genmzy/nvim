@@ -36,6 +36,10 @@ return {
             "--fallback-style=llvm",
           },
         },
+        racketls = { -- Replace 'your_lsp_name' with the actual server name
+          cmd = { "racket", "-l", "racket-langserver" }, -- Command and arguments to start the LSP server
+          filetypes = { "racket", "scheme" }, -- File types the LSP should attach to (e.g., "python", "lua")
+        },
         gopls = {
           settings = {
             gopls = {
