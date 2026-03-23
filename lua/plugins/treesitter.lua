@@ -11,5 +11,6 @@ return {
         node_incremental = "<cr>",
       },
     },
+    ensure_installed = { "racket" },
   },
 }
