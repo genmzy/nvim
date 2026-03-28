@@ -41,17 +41,17 @@ return {
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require("everforest").setup({
-        background = "medium",
+        background = "hard",
         colours_override = function(palette)
-          palette.blue = "#35989F" -- or 3482AC
-          palette.purple = "#DC5597"
-          palette.statusline1 = palette.green
+          -- palette.blue = "#35989F" -- or 3482AC
+          -- palette.purple = "#DC5597"
+          -- palette.statusline1 = palette.green
         end,
         on_highlights = function(hl, palette)
           hl.TSParameter = { fg = palette.aqua, bg = palette.none, bold = false }
           hl.TSPunctBracket = { fg = palette.grey0, bg = palette.none, bold = false }
           hl.jsonString = { link = "String" }
-          hl.FzfLuaDirPart = { fg = palette.grey2 }
+          hl.FzfLuaDirPart = { fg = palette.grey0 }
           hl.BlinkCmpLabelMatch = { fg = palette.orange }
           hl.LspSignatureActiveParameter = { bg = palette.bg4, bold = true }
           hl.BlinkCmpMenuSelection = { bg = palette.bg4, bold = true }

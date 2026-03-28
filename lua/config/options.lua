@@ -35,5 +35,5 @@ opt.jop = "stack"
 -- opt.winborder = "single"
 
 -- always set dark to disable autochange
-opt.background = "light"
+opt.background = "dark"
 opt.winblend = 15
