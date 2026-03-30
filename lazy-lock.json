@@ -1,5 +1,5 @@
 {
-  "Calendar.nvim": { "branch": "main", "commit": "b869473b84b78d848c651d48f7345522a5615281" },
+  "Calendar.nvim": { "branch": "main", "commit": "ceccd72eb73069e5599d38b3a3b24f51311657c6" },
   "LazyVim": { "branch": "main", "commit": "6055e59613b406f9c4312c95e56f604fb839a97e" },
   "SchemaStore.nvim": { "branch": "main", "commit": "aa25399c48236b77af71d4b64cdf157d2ba4e990" },
   "Trans.nvim": { "branch": "v2", "commit": "e58d63a8f6621845776da4657a06ca29ca75ef1a" },
