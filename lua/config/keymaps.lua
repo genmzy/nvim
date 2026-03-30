@@ -252,3 +252,20 @@ if plugged("vim-dadbod-ui") then
     { "<leader>fd", "<cmd>tabnew<cr><cmd>DBUIToggle<cr>", desc = "DB Layout" },
   })
 end
+
+if vim.fn.executable("lazygit") then
+  local map = LazyVim.safe_keymap_set
+
+  map("n", "<leader>gg", function()
+    Snacks.lazygit({
+      cwd = LazyVim.root.git(),
+      config = { gui = { border = "rounded" } },
+    })
+  end, { desc = "Lazygit (Root Dir)" })
+
+  map("n", "<leader>gG", function()
+    Snacks.lazygit({
+      config = { gui = { border = "rounded" } },
+    })
+  end, { desc = "Lazygit (cwd)" })
+end

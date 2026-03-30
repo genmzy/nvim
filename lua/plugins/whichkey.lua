@@ -12,7 +12,7 @@ return {
     preset = "modern",
     win = {
       no_overlap = false,
-      border = "single",
+      border = "rounded",
     },
   },
 }

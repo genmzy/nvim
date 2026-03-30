@@ -4,5 +4,5 @@
 
 return {
   "mason.nvim",
-  opts = { ui = { border = "single" } },
+  opts = { ui = { border = "rounded" } },
 }
