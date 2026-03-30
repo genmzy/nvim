@@ -12,6 +12,9 @@ return {
   {
     "catppuccin",
     opts = {
+      styles = {
+        conditionals = {},
+      },
       custom_highlights = function(colors)
         return {
           PmenuMatch = { fg = colors.lavender, bold = true },
