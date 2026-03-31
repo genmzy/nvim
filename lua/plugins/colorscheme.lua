@@ -14,6 +14,7 @@ return {
     opts = {
       styles = {
         conditionals = {},
+        miscs = {},
       },
       custom_highlights = function(colors)
         return {
