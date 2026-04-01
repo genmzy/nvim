@@ -13,7 +13,7 @@ return {
       desc = "Undotree",
     },
   },
-  config = {
+  opts = {
     scroll = { enabled = false },
     terminal = {
       win = {
@@ -49,6 +49,13 @@ return {
           },
         },
       },
+    },
+    -- should run `check_health` for necessary tools
+    -- for latex:   `apt install texlive-latex-extra`
+    -- for mermaid: `echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns`
+    image = {
+      enabled = true,
+      doc = { enabled = true, inline = true, float = false, max_width = 50, max_height = 50 },
     },
   },
 }
