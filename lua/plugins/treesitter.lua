@@ -4,13 +4,13 @@
 
 return {
   "nvim-treesitter/nvim-treesitter",
-  opts = {
-    incremental_selection = {
+  opts = function(_, opts)
+    opts.incremental_selection = {
       keymaps = {
         init_selection = "<cr>",
         node_incremental = "<cr>",
       },
-    },
-    ensure_installed = { "racket" },
-  },
+    }
+    vim.list_extend(opts.ensure_installed, { "racket", "ini", "latex", "typst" })
+  end,
 }
