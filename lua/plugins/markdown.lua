@@ -80,6 +80,7 @@ return {
       render_modes = true, -- keep rendering while inserting
     },
     checkbox = {
+      enabled = true,
       unchecked = {
         icon = "󰄱",
         highlight = "RenderMarkdownCodeFallback",
@@ -153,5 +154,6 @@ return {
       blink = { enabled = true },
       lsp = { enabled = true },
     },
+    latex = { enabled = false },
   },
 }
