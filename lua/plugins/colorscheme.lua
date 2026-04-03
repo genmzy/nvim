@@ -21,6 +21,8 @@ return {
           PmenuMatch = { fg = colors.lavender, bold = true },
           Search = { bg = colors.lavender, fg = colors.base },
           Comment = { fg = colors.surface2 },
+          Macro = { fg = colors.pink },
+          ["@module"] = { fg = colors.sky },
         }
       end,
     },
