@@ -2,6 +2,18 @@
 -- extra syntax
 --
 
+vim.g.rainbow_delimiters = {
+  highlight = {
+    "RainbowDelimiterRed",
+    "RainbowDelimiterGreen",
+    "RainbowDelimiterYellow",
+    "RainbowDelimiterCyan",
+    "RainbowDelimiterBlue",
+    "RainbowDelimiterViolet",
+    "RainbowDelimiterOrange",
+  },
+}
+
 return {
   -- kamailio/opensips
   {
