@@ -13,4 +13,5 @@ return {
     "zchee/vim-goasm",
     ft = { "goasm" },
   },
+  { "HiPhish/rainbow-delimiters.nvim" },
 }
