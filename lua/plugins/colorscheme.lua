@@ -12,6 +12,7 @@ return {
   {
     "catppuccin",
     opts = {
+      no_italic = true,
       styles = {
         conditionals = {},
         miscs = {},
@@ -20,9 +21,12 @@ return {
         return {
           PmenuMatch = { fg = colors.lavender, bold = true },
           Search = { bg = colors.lavender, fg = colors.base },
-          Comment = { fg = colors.surface2 },
+          Comment = { fg = colors.surface2, style = { "italic" } },
           Macro = { fg = colors.pink },
-          ["@module"] = { fg = colors.sky },
+          ["@module"] = { fg = colors.pink },
+          ["@lsp.typemod.function.defaultLibrary"] = { fg = colors.blue }, -- difference builtin and default library font
+          ["@function.builtin"] = { fg = colors.red },
+          ["@namespace.builtin"] = { fg = colors.red },
         }
       end,
     },
