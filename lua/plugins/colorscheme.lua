@@ -23,6 +23,7 @@ return {
           Search = { bg = colors.lavender, fg = colors.base },
           Comment = { fg = colors.surface2, style = { "italic" } },
           Macro = { fg = colors.pink },
+          RainbowDelimiterRed = { fg = colors.pink },
           ["@module"] = { fg = colors.pink },
           ["@lsp.typemod.function.defaultLibrary"] = { fg = colors.blue }, -- difference builtin and default library font
           ["@function.builtin"] = { fg = colors.red },
