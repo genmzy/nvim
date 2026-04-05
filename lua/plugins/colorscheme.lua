@@ -29,6 +29,7 @@ return {
           ["@lsp.typemod.function.defaultLibrary"] = { fg = colors.blue }, -- difference builtin and default library font
           ["@function.builtin"] = { fg = colors.red },
           ["@namespace.builtin"] = { fg = colors.red },
+          ["@variable.parameter"] = { fg = colors.flamingo },
         }
       end,
     },
