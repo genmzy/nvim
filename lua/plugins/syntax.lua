@@ -4,12 +4,12 @@
 
 vim.g.rainbow_delimiters = {
   highlight = {
-    "RainbowDelimiterBlue",
+    "RainbowDelimiterYellow",
     "RainbowDelimiterRed",
     "RainbowDelimiterGreen",
-    "RainbowDelimiterYellow",
     "RainbowDelimiterCyan",
     "RainbowDelimiterViolet",
+    "RainbowDelimiterBlue",
     "RainbowDelimiterOrange",
   },
 }
