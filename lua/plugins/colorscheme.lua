@@ -12,7 +12,7 @@ return {
   {
     "catppuccin",
     opts = {
-      -- no_italic = true,
+      no_italic = true,
       styles = {
         conditionals = {},
         miscs = {},
@@ -25,6 +25,7 @@ return {
           Comment = { fg = colors.surface2, style = { "italic" } },
           Macro = { fg = colors.pink },
           RainbowDelimiterRed = { fg = colors.pink },
+          MatchParen = { bg = colors.surface1, fg = "NONE", bold = false },
           ["@module"] = { fg = colors.pink },
           ["@lsp.typemod.function.defaultLibrary"] = { fg = colors.blue }, -- difference builtin and default library font
           ["@function.builtin"] = { fg = colors.red },
