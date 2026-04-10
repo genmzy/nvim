@@ -40,6 +40,8 @@ return {
     opts.sections.lualine_b = {
       { "branch", icon = { "󰘬" } },
     }
+    opts.sections.lualine_c[#opts.sections.lualine_c - 1] =
+      LazyVim.lualine.pretty_path({ modified_hl = "NeogitGraphBoldYellow" })
     opts.sections.lualine_z = {
       {
         function()
