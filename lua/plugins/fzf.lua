@@ -39,5 +39,8 @@ return {
       width = 0.9,
       height = 0.9,
     },
+    defaults = {
+      prompt = " ",
+    },
   },
 }
