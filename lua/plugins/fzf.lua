@@ -40,5 +40,8 @@ return {
       height = 0.9,
       -- border = "rounded",
     },
+    defaults = {
+      prompt = " ",
+    },
   },
 }
