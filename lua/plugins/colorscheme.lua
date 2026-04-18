@@ -19,7 +19,7 @@ return {
       },
       custom_highlights = function(colors)
         return {
-          PmenuMatch = { fg = colors.lavender, bold = true },
+          PmenuMatch = { fg = colors.flamingo, bold = true },
           Search = { bg = colors.lavender, fg = colors.base },
           Comment = { fg = colors.surface2, style = { "italic" } },
           Macro = { fg = colors.pink },
