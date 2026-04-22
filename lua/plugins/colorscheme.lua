@@ -13,6 +13,7 @@ return {
     "catppuccin",
     opts = {
       no_italic = true,
+      no_bold = true,
       styles = {
         conditionals = {},
         miscs = {},
