@@ -11,6 +11,6 @@ return {
         node_incremental = "<cr>",
       },
     }
-    vim.list_extend(opts.ensure_installed, { "racket", "ini", "latex", "typst" })
+    vim.list_extend(opts.ensure_installed, { "racket", "ini", "latex", "typst", "ziggy" })
   end,
 }
