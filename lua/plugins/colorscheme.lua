@@ -22,7 +22,7 @@ return {
         return {
           Normal = { bg = "NONE" },
           NormalNC = { bg = "NONE" },
-          PmenuMatch = { fg = colors.flamingo, bold = true },
+          PmenuMatch = { fg = colors.rosewater, bold = true },
           Search = { bg = colors.lavender, fg = colors.base },
           Comment = { fg = colors.surface2, style = { "italic" } },
           Macro = { fg = colors.pink },
