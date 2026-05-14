@@ -28,6 +28,8 @@ return {
           Macro = { fg = colors.pink },
           RainbowDelimiterRed = { fg = colors.pink },
           MatchParen = { bg = colors.surface1, fg = "NONE", bold = false },
+          FzfLuaHeaderBind = { fg = colors.pink },
+          FzfLuaHeaderText = { fg = colors.blue, bold = true },
           ["@module"] = { fg = colors.pink },
           ["@lsp.typemod.function.defaultLibrary"] = { fg = colors.blue }, -- difference builtin and default library font
           ["@function.builtin"] = { fg = colors.red },
