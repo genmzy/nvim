@@ -44,7 +44,7 @@ require("lazy").setup({
     -- editor search for fzf
     { import = "lazyvim.plugins.extras.editor.fzf" },
     -- debugger
-    { import = "lazyvim.plugins.extras.dap" },
+    { import = "lazyvim.plugins.extras.dap.core" },
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     { import = "lazyvim.plugins.extras.util.project" },
     { import = "lazyvim.plugins.extras.util.dot" },
