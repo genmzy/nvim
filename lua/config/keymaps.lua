@@ -57,7 +57,6 @@ local redirect_mapper = {
   { "<leader>gR", "<leader>ghB" }, -- git reference
   { "<leader>gu", "<leader>ghr" }, -- git current
   { "<leader>gf", "<leader>gs" }, -- git stauts(files)
-  { [[\t]], "<leader>fT" }, -- float terminal
   { [[\cc]], "gcc" }, -- comment current line
   { [[\cc]], "gc", "x" }, -- virsual comment
   { "<F4>", "<leader>cs" },
@@ -192,7 +191,6 @@ wk.add({
 -- other
 wk.add({
   { "gl", desc = "Go Declaration" },
-  { "\\t", desc = "Float Terminal" },
   { "\\c", group = "+comments", icon = { icon = "", color = "grey" }, mode = nx },
   { "\\cc", desc = "Comment Toggle", icon = { icon = "", color = "grey" }, mode = nx },
   { [[\\]], desc = "Place Holder", icon = { icon = "", color = "purple" } },
