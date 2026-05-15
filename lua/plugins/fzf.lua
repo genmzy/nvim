@@ -3,8 +3,13 @@
 --
 
 local function snacks_terminal_fzf()
-  local fzf = require("fzf-lua")
   local terms = Snacks.terminal.list()
+  if #terms == 0 then
+    vim.notify("No existing terminal", vim.log.levels.INFO)
+    return
+  end
+
+  local fzf = require("fzf-lua")
   local utils = require("fzf-lua.utils")
 
   local entries = {}
