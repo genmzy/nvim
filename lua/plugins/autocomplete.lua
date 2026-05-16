@@ -15,6 +15,17 @@ return {
   {
     "saghen/blink.cmp",
     opts = {
+      sources = {
+        providers = {
+          snippets = {
+            -- if has a letter(non-whitespace) before current cursor,
+            -- low down snippet priority
+            score_offset = function()
+              return has_words_before() and -10 or 0
+            end,
+          },
+        },
+      },
       keymap = {
         preset = "enter",
         -- perhaps should use more c-l instead of tab and enter
