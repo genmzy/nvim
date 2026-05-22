@@ -20,12 +20,12 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = function(_, opts)
     opts.options.component_separators = {
-      left = "",
-      right = "",
+      left = "│",
+      right = "│",
     }
     opts.options.section_separators = {
-      left = "",
-      right = "",
+      left = "",
+      right = "",
     }
     opts.sections.lualine_a = {
       {
@@ -33,7 +33,7 @@ return {
           return alias[vim.fn.mode()] or ""
         end,
         icon = "󰊠",
-        separator = { left = "", right = "" },
+        separator = { left = "", right = "" },
         color = { gui = "bold" },
       },
     }
@@ -47,7 +47,7 @@ return {
         function()
           return " " .. os.date("%R")
         end,
-        separator = { left = "", right = "" },
+        separator = { left = "", right = "" },
         color = { gui = "bold" },
       },
     }
