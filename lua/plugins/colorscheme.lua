@@ -27,6 +27,7 @@ return {
           MatchParen = { bg = colors.surface1, fg = "NONE", bold = false },
           FzfLuaHeaderBind = { fg = colors.pink },
           FzfLuaHeaderText = { fg = colors.blue, bold = true },
+          CatpLualineSeparator = { fg = colors.surface1 },
           ["@module"] = { fg = colors.pink },
           ["@lsp.typemod.function.defaultLibrary"] = { fg = colors.blue }, -- difference builtin and default library font
           ["@function.builtin"] = { fg = colors.red },
