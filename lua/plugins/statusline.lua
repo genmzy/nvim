@@ -20,8 +20,8 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = function(_, opts)
     opts.options.component_separators = {
-      left = "│",
-      right = "│",
+      left = "%#SignColumn#│",
+      right = "%#SignColumn#│",
     }
     opts.options.section_separators = {
       left = "",
