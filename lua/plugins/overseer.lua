@@ -17,7 +17,9 @@ return {
           end,
         })
         if #tasks > 0 then
-          overseer.run_action(tasks[1], "restart")
+          local task = tasks[1]
+          vim.notify("Re-running last task: `" .. task.name .. "`")
+          overseer.run_action(task, "restart")
         else
           vim.notify("No existing overseer tasks")
         end
