@@ -3,5 +3,17 @@
 -- Add any additional autocmds here
 
 local hl = vim.api.nvim_set_hl
-
 hl(0, "LspInlayHint", { fg = "#545c7e", underdashed = true })
+
+-- fix vim-goasm cover all *.s filetype to goasm
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.s",
+  callback = function(args)
+    local buf = args.buf
+    if vim.fs.root(buf, "go.mod") then
+      vim.bo[buf].filetype = "goasm"
+    else
+      vim.bo[buf].filetype = "asm"
+    end
+  end,
+})
