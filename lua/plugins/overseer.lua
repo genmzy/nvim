@@ -5,6 +5,8 @@
 return {
   "overseer.nvim",
   keys = {
+    -- difference from lazyvim: make cursor to jump to overseer list window
+    { "<leader>ow", "<cmd>OverseerToggle<cr>", desc = "Task list" },
     { "<leader>os", "<cmd>OverseerShell<cr>", desc = "Task shell" },
     {
       "<leader>or",
