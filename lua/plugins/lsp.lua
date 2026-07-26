@@ -41,6 +41,7 @@ return {
             { "<c-p>", function() return vim.lsp.buf.signature_help() end, mode = "i" },
           },
         },
+        neocmake = {},
         clangd = {
           cmd = {
             "clangd",
