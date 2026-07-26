@@ -12,6 +12,22 @@ local lombok_path = jdtls_dir .. "/lombok.jar"
 
 return {
   {
+    "mason.nvim",
+    opts = {
+      ensure_installed = {
+        "neocmakelsp",
+        "bash-language-server",
+        "shellcheck",
+        "shfmt",
+        "html-lsp",
+        "dockerfile-language-server",
+        "lemminx",
+        "tree-sitter-cli",
+        "vim-language-server",
+      },
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     opts = {
       diagnostics = { virtual_text = false },
