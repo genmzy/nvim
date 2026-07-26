@@ -1,1 +1,1 @@
-common/sp_auto.lua
+common/auto.lua
