@@ -12,4 +12,5 @@ vim.g.switch_mapping = "<S-Tab>"
 
 return {
   "AndrewRadev/switch.vim",
+  ft = "markdown",
 }
