@@ -2,6 +2,8 @@
 -- catppuccin
 --
 
+local dark_visual = "#252538"
+
 return {
   {
     "LazyVim/LazyVim",
@@ -30,6 +32,10 @@ return {
           MatchParen = { bg = colors.surface1, fg = "NONE", bold = false },
           FzfLuaHeaderBind = { fg = colors.pink },
           FzfLuaHeaderText = { fg = colors.blue, bold = true },
+          BlinkCmpMenuSelection = { bg = dark_visual },
+          Visual = { bg = colors.surface0 },
+          LspReferenceText = { bg = "NONE" },
+          LspReferenceTarget = { bg = "NONE" },
           ["@module"] = { fg = colors.pink },
           ["@lsp.typemod.function.defaultLibrary"] = { fg = colors.blue }, -- difference builtin and default library font
           ["@function.builtin"] = { fg = colors.red },
