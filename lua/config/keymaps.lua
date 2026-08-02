@@ -181,12 +181,13 @@ wk.add({
   { "<leader>gR", desc = "GitView Buffer" },
   { "<leader>gu", desc = "Reset Chunk" },
   { "<leader>mk", desc = "Marks" },
-  { "<leader>n", desc = "NoHlSearch" },
+  { "<leader>n", desc = "Search Clean" },
   { "<leader>r", desc = "Docs", icon = { icon = "󰧮", color = "green" } },
   { "<leader>si", desc = "History" },
   { "<leader>sI", desc = "History (all)" },
   { "<leader>z", desc = "Unzip All", icon = { icon = "", color = "red" } },
   { "<leader>h", desc = "Man", icon = { icon = "󰙃", color = "purple" } },
+  { "<leader>o", group = "+tasks", icon = "" },
 })
 
 -- other
