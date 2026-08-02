@@ -130,13 +130,23 @@ local keymapper = {
   -- delete and enter insert mode for luasnip, coc set this by default
   { "<bs>", "<c-o>s", "s" },
   { "<c-h>", "<c-o>s", "s" },
-
-  { "<leader>h", "<cmd>Man<cr>", nx },
 }
 
 for _, map in ipairs(keymapper) do
   vim.keymap.set(map[3] or "n", map[1], map[2], { noremap = true })
 end
+
+vim.keymap.set("n", "<leader>h", function()
+  if vim.bo.filetype ~= "cpp" then
+    vim.cmd("Man")
+    return
+  end
+
+  local cppman = require("cppman")
+  if cppman and cppman.open_cppman_for then
+    cppman.open_cppman_for(vim.fn.expand("<cword>"))
+  end
+end)
 
 -- s-prefix
 local wk = require("which-key")
@@ -181,12 +191,13 @@ wk.add({
   { "<leader>gR", desc = "GitView Buffer" },
   { "<leader>gu", desc = "Reset Chunk" },
   { "<leader>mk", desc = "Marks" },
-  { "<leader>n", desc = "NoHlSearch" },
+  { "<leader>n", desc = "Search Clean" },
   { "<leader>r", desc = "Docs", icon = { icon = "󰧮", color = "green" } },
   { "<leader>si", desc = "History" },
   { "<leader>sI", desc = "History (all)" },
   { "<leader>z", desc = "Unzip All", icon = { icon = "", color = "red" } },
   { "<leader>h", desc = "Man", icon = { icon = "󰙃", color = "purple" } },
+  { "<leader>o", group = "+tasks", icon = "" },
 })
 
 -- other
