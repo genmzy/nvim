@@ -130,13 +130,23 @@ local keymapper = {
   -- delete and enter insert mode for luasnip, coc set this by default
   { "<bs>", "<c-o>s", "s" },
   { "<c-h>", "<c-o>s", "s" },
-
-  { "<leader>h", "<cmd>Man<cr>", nx },
 }
 
 for _, map in ipairs(keymapper) do
   vim.keymap.set(map[3] or "n", map[1], map[2], { noremap = true })
 end
+
+vim.keymap.set("n", "<leader>h", function()
+  if vim.bo.filetype ~= "cpp" then
+    vim.cmd("Man")
+    return
+  end
+
+  local cppman = require("cppman")
+  if cppman and cppman.open_cppman_for then
+    cppman.open_cppman_for(vim.fn.expand("<cword>"))
+  end
+end)
 
 -- s-prefix
 local wk = require("which-key")
