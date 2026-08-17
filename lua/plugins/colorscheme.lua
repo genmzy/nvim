@@ -20,6 +20,9 @@ return {
         conditionals = {},
         miscs = {},
       },
+      color_overrides = {
+        mocha = { yellow = "#f9e7af" },
+      },
       custom_highlights = function(colors)
         return {
           Normal = { bg = "NONE" },
@@ -41,6 +44,8 @@ return {
           ["@function.builtin"] = { fg = colors.red },
           ["@namespace.builtin"] = { fg = colors.red },
           ["@variable.parameter"] = { fg = colors.flamingo },
+          ["@keyword.import.c"] = { fg = colors.lavender },
+          ["@keyword.import.cpp"] = { fg = colors.lavender },
         }
       end,
     },
