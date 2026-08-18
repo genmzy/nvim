@@ -44,8 +44,8 @@ return {
           ["@function.builtin"] = { fg = colors.red },
           ["@namespace.builtin"] = { fg = colors.red },
           ["@variable.parameter"] = { fg = colors.flamingo },
-          ["@keyword.import.c"] = { fg = colors.lavender },
-          ["@keyword.import.cpp"] = { fg = colors.lavender },
+          ["@keyword.import.c"] = { fg = colors.mauve },
+          ["@keyword.import.cpp"] = { fg = colors.mauve },
         }
       end,
     },
