@@ -36,6 +36,7 @@ return {
           Visual = { bg = colors.surface0 },
           LspReferenceText = { bg = "NONE" },
           LspReferenceTarget = { bg = "NONE" },
+          kamailioIdentifier = { link = "Function" },
           ["@module"] = { fg = colors.pink },
           ["@lsp.typemod.function.defaultLibrary"] = { fg = colors.blue }, -- difference builtin and default library font
           ["@function.builtin"] = { fg = colors.red },
