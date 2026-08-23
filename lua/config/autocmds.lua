@@ -14,3 +14,12 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end
   end,
 })
+
+-- ignore terminal wake up in overseer filetype
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "OverseerList", "OverseerOutput" },
+  callback = function() -- set nop to ignore keys for buffer
+    vim.keymap.set("n", "<c-/>", "<nop>", { buffer = true })
+    vim.keymap.set("t", "<c-/>", "<nop>", { buffer = true })
+  end,
+})
