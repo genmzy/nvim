@@ -26,3 +26,17 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("t", "<c-/>", "<nop>", { buffer = true })
   end,
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*.log",
+  callback = function()
+    vim.opt_local.wrap = true
+    -- make words unsplit
+    vim.opt_local.linebreak = true
+    vim.opt_local.breakindent = true
+    -- show line break identifier at the front of new line
+    vim.opt_local.showbreak = "  "
+    vim.opt_local.textwidth = 0
+    vim.opt_local.sidescrolloff = 0
+  end,
+})
