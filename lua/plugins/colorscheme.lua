@@ -14,11 +14,37 @@ return {
   {
     "catppuccin",
     opts = {
-      no_italic = true,
       no_bold = true,
       styles = {
+        comments = { "italic" },
         conditionals = {},
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
         miscs = {},
+      },
+      lsp_styles = {
+        virtual_text = {
+          errors = {},
+          hints = {},
+          warnings = {},
+          information = {},
+          ok = {},
+        },
+      },
+      underlines = {
+        errors = { "underline" },
+        hints = { "underline" },
+        warnings = { "underline" },
+        information = { "underline" },
+        ok = { "underline" },
       },
       color_overrides = {
         mocha = { yellow = "#f9e7af" },
@@ -40,6 +66,7 @@ return {
           LspReferenceText = { bg = "NONE" },
           LspReferenceTarget = { bg = "NONE" },
           kamailioIdentifier = { link = "Function" },
+          SnacksDashboardFooter = { style = {} },
           TreesitterContextBottom = { style = {} },
           ["@module"] = { fg = colors.pink },
           ["@lsp.typemod.function.defaultLibrary"] = { fg = colors.blue }, -- difference builtin and default library font
