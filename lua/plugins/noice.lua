@@ -18,6 +18,7 @@ return {
           },
         },
       },
+      inc_rename = false,
     },
     cmdline = single,
     -- messages = single,
