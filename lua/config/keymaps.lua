@@ -21,10 +21,10 @@ end
 
 local redirect_mapper = {
   { "<c-a>", "<home>", "c" }, -- jump to line first char
-  { "<c-->", "<left>", "c" }, -- left move
-  { "<c-=>", "<right>", "c" }, -- right move
-  { "<c-b>", "<c-left>", "c" }, -- jump to current word first char
-  { "<c-n>", "<c-right>", "c" }, -- jump to current word last char
+  { "<c-b>", "<left>", "c" }, -- left move
+  { "<c-f>", "<right>", "c" }, -- right move
+  { "<c-,>", "<c-left>", "c" }, -- jump to current word first char
+  { "<c-.>", "<c-right>", "c" }, -- jump to current word last char
   { "<leader>bb", "<leader>fb" }, -- buffer search
   { "<leader>si", "<leader>fR" }, -- history search
   { "<leader>sI", "<leader>fr" }, -- history search
