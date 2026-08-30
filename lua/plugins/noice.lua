@@ -17,5 +17,6 @@ return {
         },
       },
     },
+    inc_rename = false,
   },
 }
