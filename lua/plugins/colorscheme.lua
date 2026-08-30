@@ -34,7 +34,6 @@ return {
           FzfLuaHeaderText = { fg = colors.blue, bold = true },
           BlinkCmpMenuSelection = { bg = dark_visual },
           Visual = { bg = colors.surface0 },
-          LspReferenceText = { bg = "NONE" },
           LspReferenceTarget = { bg = "NONE" },
           kamailioIdentifier = { link = "Function" },
           TreesitterContextBottom = { style = {} },
