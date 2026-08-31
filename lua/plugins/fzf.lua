@@ -60,6 +60,25 @@ local function snacks_terminal_fzf()
   })
 end
 
+local plugged = function(plugin)
+  return LazyVim.has(plugin) and LazyVim.is_loaded(plugin)
+end
+
+local function is_dapui_open()
+  local status, windows = pcall(require, "dapui.windows")
+  if not status then
+    return false
+  end
+
+  for _, layout in ipairs(windows.layouts) do
+    if layout:is_open() then
+      return true
+    end
+  end
+
+  return false
+end
+
 return {
   "fzf-lua",
   keys = {
@@ -71,8 +90,9 @@ return {
       "<leader><space>",
       function()
         if
-          LazyVim.has("nvim-dap")
-          and LazyVim.is_loaded("nvim-dap")
+          plugged("nvim-dap")
+          and plugged("nvim-dap-ui")
+          and is_dapui_open()
           and require("util.str").has_prefix(require("dap").status(), "Stopped at")
         then
           require("dap").continue()
