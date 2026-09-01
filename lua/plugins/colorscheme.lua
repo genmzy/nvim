@@ -36,6 +36,7 @@ return {
           LspReferenceTarget = { bg = "NONE" },
           kamailioIdentifier = { link = "Function" },
           TreesitterContextBottom = { style = {} },
+          SnacksIndentScope = { fg = colors.overlay0 },
           ["@module"] = { fg = colors.pink },
           ["@lsp.typemod.function.defaultLibrary"] = { fg = colors.blue }, -- difference builtin and default library font
           ["@function.builtin"] = { fg = colors.red },
