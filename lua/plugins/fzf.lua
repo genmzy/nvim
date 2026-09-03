@@ -14,12 +14,14 @@ local function snacks_terminal_fzf()
 
   local entries = {}
   for _, term in ipairs(terms) do
-    -- format: [termial id] title
-    local label = string.format(
-      "[%d] %s",
-      vim.api.nvim_buf_get_var(term.buf, "snacks_terminal").id,
-      vim.api.nvim_buf_get_var(term.buf, "term_title") or "Shell"
-    )
+    local term_info = vim.api.nvim_buf_get_var(term.buf, "snacks_terminal")
+    -- format: [id] title (cmd)
+    local cmd = term_info.cmd or ""
+    if type(cmd) == "table" then
+      cmd = table.concat(cmd, " ")
+    end
+    local title = vim.api.nvim_buf_get_var(term.buf, "term_title") or "Shell"
+    local label = string.format("[%d] %s (%s)", term_info.id, title, cmd)
     table.insert(entries, label)
   end
 
@@ -83,7 +85,7 @@ return {
   "fzf-lua",
   keys = {
     { "<leader>sp", "<cmd>FzfLua grep_project<cr>", desc = "Grep Project" },
-    { "<leader>a", "<cmd>FzfLua grep_project<cr>", desc = "Grep Project" },
+    { "<leader>a/", "<cmd>FzfLua grep_project<cr>", desc = "Grep Project" },
     { "<leader>l", "<cmd>FzfLua grep_curbuf<cr>", desc = "Buffer Lines" },
     { [[\t]], snacks_terminal_fzf, desc = "Terminals" },
     {
@@ -106,8 +108,8 @@ return {
   opts = {
     keymap = {
       builtin = {
-        ["<A-j>"] = "preview-down",
-        ["<A-k>"] = "preview-up",
+        ["<a-j>"] = "preview-down",
+        ["<a-k>"] = "preview-up",
       },
       fzf = {
         ["ctrl-u"] = "unix-line-discard",
