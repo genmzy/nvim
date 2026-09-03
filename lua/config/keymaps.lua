@@ -36,8 +36,8 @@ local redirect_mapper = {
   { "sv", "]w" }, -- next warning diagnostic
   { "sV", "[w" }, -- prev warning diagnostic
   { "sy", "<leader>p" }, -- yanky
-  { "gi", "gI" }, -- go impletetaion
-  { "gl", "gD" }, -- go declaraction
+  { "gi", "gI" }, -- go implementation
+  { "gl", "gD" }, -- go declaration
   { "sr", "<leader>cr" }, -- rename variable/def_name
   { "so", "<leader>ca" }, -- code action
   { "sd", "<leader>sD" }, -- workspace diagnostics
