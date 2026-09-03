@@ -1,3 +1,7 @@
+--
+-- ai code
+--
+
 local opencode_cmd = "opencode --port --continue"
 
 ---@type snacks.terminal.Opts
@@ -74,7 +78,7 @@ return {
         if vim.bo.filetype ~= "snacks_terminal" then
           return
         end
-        require("opencode").command("session.half.page.up")
+        require("opencode").command("session.page.up")
       end,
       mode = { "t" },
       desc = "Scroll OpenCode up",
@@ -85,7 +89,7 @@ return {
         if vim.bo.filetype ~= "snacks_terminal" then
           return
         end
-        require("opencode").command("session.half.page.down")
+        require("opencode").command("session.page.down")
       end,
       mode = { "t" },
       desc = "Scroll OpenCode down",
