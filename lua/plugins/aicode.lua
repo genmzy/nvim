@@ -14,19 +14,29 @@ local snacks_terminal_opts = {
   },
 }
 
-local function opencode_toggle()
-  Snacks.terminal.toggle(opencode_cmd, snacks_terminal_opts)
-end
-
 return {
   "nickjvandyke/opencode.nvim",
   version = "*",
   keys = {
     {
       "<leader>a<space>",
-      opencode_toggle,
+      function()
+        Snacks.terminal.toggle(opencode_cmd, snacks_terminal_opts)
+      end,
       mode = { "n" },
       desc = "Toggle OpenCode",
+    },
+    {
+      "<leader>at",
+      function()
+        vim.schedule(function()
+          Snacks.terminal
+            .get(opencode_cmd, vim.tbl_extend("force", snacks_terminal_opts, { create = false }))
+            :close({ force = true })
+        end)
+      end,
+      mode = { "n" },
+      desc = "Quit OpenCode Terminal",
     },
     {
       "<leader>am", -- menu
