@@ -82,7 +82,7 @@ return {
         Snacks.terminal.toggle(opencode_cmd, snacks_terminal_opts)
       end,
       mode = { "n" },
-      desc = "Toggle OpenCode",
+      desc = "Toggle",
     },
     {
       "<leader>a<tab>",
@@ -90,7 +90,7 @@ return {
         require("opencode").command("agent.cycle")
       end,
       mode = { "n" },
-      desc = "Switch OpenCode Agent/Mode",
+      desc = "Switch Agent/Mode",
     },
     {
       "<leader>am", -- menu
@@ -98,7 +98,7 @@ return {
         require("opencode").select()
       end,
       mode = { "n", "x" },
-      desc = "Select OpenCode…",
+      desc = "Menu",
     },
     {
       "<leader>ai",
@@ -106,15 +106,15 @@ return {
         require("opencode").ask()
       end,
       mode = { "n", "x" },
-      desc = "Ask OpenCode…",
+      desc = "Input",
     },
     {
-      "<leader>aa",
+      "<leader>at",
       function()
         require("opencode").ask("@this: ")
       end,
       mode = { "n", "x" },
-      desc = "Ask OpenCode…",
+      desc = "This",
     },
     {
       "<leader>ab",
@@ -122,7 +122,7 @@ return {
         return require("opencode").ask("@buffer: ")
       end,
       mode = { "n" },
-      desc = "Line to OpenCode",
+      desc = "Buffer",
       expr = true,
     },
     {
@@ -131,7 +131,7 @@ return {
         return require("opencode").operator("@this ")
       end,
       mode = { "x" },
-      desc = "Range to OpenCode",
+      desc = "Select(visual)",
       expr = true,
     },
     {
@@ -140,7 +140,7 @@ return {
         return require("opencode").operator("@this ") .. "_"
       end,
       mode = { "n" },
-      desc = "Line to OpenCode",
+      desc = "Select(normal)",
       expr = true,
     },
     -- open code terminal shortcuts
@@ -153,7 +153,7 @@ return {
         require("opencode").command("session.page.up")
       end,
       mode = { "t" },
-      desc = "Scroll OpenCode up",
+      desc = "Scroll Up",
     },
     {
       "<a-j>",
@@ -164,7 +164,7 @@ return {
         require("opencode").command("session.page.down")
       end,
       mode = { "t" },
-      desc = "Scroll OpenCode down",
+      desc = "Scroll Down",
     },
     {
       "<c-s-k>",
@@ -172,7 +172,7 @@ return {
         scroll_other_window(true)
       end,
       mode = { "n" },
-      desc = "Scroll OpenCode up",
+      desc = "Scroll Another Window Up",
     },
     {
       "<c-s-j>",
@@ -180,7 +180,7 @@ return {
         scroll_other_window(false)
       end,
       mode = { "n" },
-      desc = "Scroll OpenCode down",
+      desc = "Scroll Another Window down",
     },
   },
   config = function()
