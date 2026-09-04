@@ -14,6 +14,26 @@ local snacks_terminal_opts = {
   },
 }
 
+local function scroll_opencode(up)
+  local ok = pcall(require, "opencode")
+  if not ok then
+    return
+  end
+  local entered = false
+  for _, term in ipairs(Snacks.terminal.list()) do
+    if vim.bo[term.buf].filetype == "snacks_terminal" then
+      local info = vim.b[term.buf].snacks_terminal
+      if info and info.cmd == opencode_cmd then
+        entered = true
+        break
+      end
+    end
+  end
+  if entered then
+    require("opencode").command(up and "session.page.up" or "session.page.down")
+  end
+end
+
 return {
   "nickjvandyke/opencode.nvim",
   version = "*",
@@ -45,6 +65,14 @@ return {
       end,
       mode = { "n", "x" },
       desc = "Select OpenCode…",
+    },
+    {
+      "<leader>ai",
+      function()
+        require("opencode").ask()
+      end,
+      mode = { "n", "x" },
+      desc = "Ask OpenCode…",
     },
     {
       "<leader>aa",
@@ -102,6 +130,22 @@ return {
         require("opencode").command("session.page.down")
       end,
       mode = { "t" },
+      desc = "Scroll OpenCode down",
+    },
+    {
+      "<c-s-k>",
+      function()
+        scroll_opencode(true)
+      end,
+      mode = { "n" },
+      desc = "Scroll OpenCode up",
+    },
+    {
+      "<c-s-j>",
+      function()
+        scroll_opencode(false)
+      end,
+      mode = { "n" },
       desc = "Scroll OpenCode down",
     },
   },
