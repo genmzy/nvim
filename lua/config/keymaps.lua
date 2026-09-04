@@ -202,6 +202,7 @@ wk.add({
   { "<leader>z", desc = "Unzip All", icon = { icon = "", color = "red" } },
   { "<leader>h", desc = "Man", icon = { icon = "󰙃", color = "purple" } },
   { "<leader>o", group = "+tasks", icon = "" },
+  { "<leader>a", group = "+AI/Grep", icon = "󰚩" },
 })
 
 -- other
