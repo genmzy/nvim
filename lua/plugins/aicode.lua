@@ -129,7 +129,7 @@ return {
       desc = "Scroll OpenCode down",
     },
     {
-      "<c-s-k>",
+      "<leader>ak",
       function()
         scroll_opencode(true)
       end,
@@ -137,7 +137,7 @@ return {
       desc = "Scroll OpenCode up",
     },
     {
-      "<c-s-j>",
+      "<leader>aj",
       function()
         scroll_opencode(false)
       end,
