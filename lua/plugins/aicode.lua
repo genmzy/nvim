@@ -47,16 +47,12 @@ return {
       desc = "Toggle OpenCode",
     },
     {
-      "<leader>at",
+      "<leader>a<tab>",
       function()
-        vim.schedule(function()
-          Snacks.terminal
-            .get(opencode_cmd, vim.tbl_extend("force", snacks_terminal_opts, { create = false }))
-            :close({ force = true })
-        end)
+        require("opencode").command("agent.cycle")
       end,
       mode = { "n" },
-      desc = "Quit OpenCode Terminal",
+      desc = "Switch OpenCode Agent/Mode",
     },
     {
       "<leader>am", -- menu
