@@ -101,6 +101,14 @@ return {
       desc = "Menu",
     },
     {
+      "<leader>ac",
+      function()
+        require("opencode").command("prompt.clear")
+      end,
+      mode = { "n" },
+      desc = "Clear Prompt",
+    },
+    {
       "<leader>ai",
       function()
         require("opencode").ask()
