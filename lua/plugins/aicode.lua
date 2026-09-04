@@ -14,23 +14,61 @@ local snacks_terminal_opts = {
   },
 }
 
-local function scroll_opencode(up)
-  local ok = pcall(require, "opencode")
-  if not ok then
+local target_scroll = function(up)
+  local cur = vim.api.nvim_get_current_win()
+  -- only consider windows in the current tabpage (excludes statusline/floats/other tabs)
+  local wins = vim.api.nvim_tabpage_list_wins(0)
+  if #wins < 2 then
     return
   end
-  local entered = false
+  -- pick the sibling window sharing an edge with the current one; fall back to
+  -- the closest window under the cursor for robustness when many windows exist
+  local target
+  local best_dist = math.huge
+  for _, win in ipairs(wins) do
+    if win ~= cur and vim.api.nvim_win_get_config(win).relative == "" then
+      local cpos = vim.api.nvim_win_get_position(cur)
+      local tpos = vim.api.nvim_win_get_position(win)
+      local dist = math.abs(cpos[1] - tpos[1]) + math.abs(cpos[2] - tpos[2])
+      if dist < best_dist then
+        best_dist = dist
+        target = win
+      end
+    end
+  end
+  if not target then
+    return
+  end
+  vim.api.nvim_set_current_win(target)
+  local ctrl = up and 0x15 or 0x04 -- <c-d> (half page down) or <c-u> (half page up)
+  vim.cmd("normal! " .. vim.fn.nr2char(ctrl))
+  vim.api.nvim_set_current_win(cur)
+end
+
+local function opencode_terminal_live()
+  local tab_wins = vim.api.nvim_tabpage_list_wins(0)
   for _, term in ipairs(Snacks.terminal.list()) do
     if vim.bo[term.buf].filetype == "snacks_terminal" then
       local info = vim.b[term.buf].snacks_terminal
       if info and info.cmd == opencode_cmd then
-        entered = true
-        break
+        -- only take precedence over plain sibling scrolling while the terminal
+        -- window is actually visible in the current tabpage
+        for _, win in ipairs(tab_wins) do
+          if vim.api.nvim_win_get_buf(win) == term.buf then
+            return true
+          end
+        end
       end
     end
   end
-  if entered then
+  return false
+end
+
+local function scroll_other_window(up)
+  if pcall(require, "opencode") and opencode_terminal_live() then
     require("opencode").command(up and "session.page.up" or "session.page.down")
+  else
+    target_scroll(up)
   end
 end
 
@@ -129,17 +167,17 @@ return {
       desc = "Scroll OpenCode down",
     },
     {
-      "<leader>ak",
+      "<c-s-k>",
       function()
-        scroll_opencode(true)
+        scroll_other_window(true)
       end,
       mode = { "n" },
       desc = "Scroll OpenCode up",
     },
     {
-      "<leader>aj",
+      "<c-s-j>",
       function()
-        scroll_opencode(false)
+        scroll_other_window(false)
       end,
       mode = { "n" },
       desc = "Scroll OpenCode down",
