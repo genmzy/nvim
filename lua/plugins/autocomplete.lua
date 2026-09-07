@@ -54,7 +54,7 @@ return {
       completion = {
         menu = { border = "rounded", winblend = 0 },
         documentation = { window = { border = "rounded" } },
-        trigger = { show_in_snippet = false },
+        trigger = { show_in_snippet = true },
       },
       -- signature = { window = { border = "single" } },
     },
