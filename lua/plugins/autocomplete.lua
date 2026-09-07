@@ -54,7 +54,7 @@ return {
       completion = {
         menu = { border = "single", winblend = 0 },
         documentation = { window = { border = "single" } },
-        trigger = { show_in_snippet = false },
+        trigger = { show_in_snippet = true },
       },
       signature = { window = { border = "single" } },
     },
