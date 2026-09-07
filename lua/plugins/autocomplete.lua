@@ -41,7 +41,7 @@ return {
             return has_words_before() and cmp.show_and_insert()
           end,
         },
-        ["<tab>"] = {
+        ["<Tab>"] = { -- NOTE: it seems a bug if use <tab> instead of <Tab>
           function(cmp)
             return has_words_before() and cmp.show_and_insert() or false
           end,
