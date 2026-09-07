@@ -29,32 +29,37 @@ return {
       keymap = {
         preset = "enter",
         -- perhaps should use more c-l instead of tab and enter
-        ["<C-o>"] = { "snippet_backward" },
+        ["<c-o>"] = { "snippet_backward" },
         -- c-j and c-k disable fallback
-        ["<C-j>"] = { "select_next", "fallback" },
-        ["<C-k>"] = { "select_prev" },
+        ["<c-j>"] = { "select_next", "fallback" },
+        ["<c-k>"] = { "select_prev" },
         -- disable blink default c-p select prev, keep c-n select next
-        ["<C-p>"] = {},
-        ["<C-l>"] = {
+        ["<c-p>"] = {},
+        ["<c-l>"] = {
           "snippet_forward",
           function(cmp)
             return has_words_before() and cmp.show_and_insert()
           end,
         },
-        ["<Tab>"] = {
+        ["<tab>"] = {
           function(cmp)
             return has_words_before() and cmp.show_and_insert() or false
           end,
           "select_next",
           "fallback",
         },
-        ["<S-Tab>"] = { "select_prev", "fallback" },
+        ["<s-tab>"] = { "select_prev", "fallback" },
         -- ignore c-w(close-and-fallback) and c-u(close-fallabck), c-e(close) for blink-cmp support it already
       },
       completion = {
         menu = { border = "rounded", winblend = 0 },
         documentation = { window = { border = "rounded" } },
-        trigger = { show_in_snippet = false },
+        trigger = { show_in_snippet = true },
+        ghost_text = {
+          enabled = function()
+            return vim.bo.filetype ~= "opencode_ask"
+          end,
+        },
       },
       -- signature = { window = { border = "single" } },
     },
