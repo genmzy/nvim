@@ -2,6 +2,8 @@
 -- markdown render
 --
 
+vim.g.mkdp_auto_close = 0
+
 return {
   "render-markdown.nvim",
   opts = {
