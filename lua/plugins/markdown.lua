@@ -2,7 +2,7 @@
 -- markdown render
 --
 
-vim.g.mkdp_auto_close = 0
+vim.g.mkdp_auto_close = 0 -- for markdown-preview
 
 return {
   "render-markdown.nvim",
@@ -74,7 +74,7 @@ return {
       language_icon = true,
       language_name = true,
       -- avoid making headings ugly
-      highlight_inline = "RenderMarkdownCodeInfo",
+      highlight_inline = "String",
     },
     heading = {
       icons = { " 󰼏 ", " 󰎨 ", " 󰼑 ", " 󰎲 ", " 󰼓 ", " 󰎴 " },
