@@ -102,7 +102,7 @@ local keymapper = {
   { "sj", "<c-w>j" },
   { "sk", "<c-w>k" },
   { "sl", "<c-w>l" },
-  { "sw", "<c-w>w" },
+  -- { "sw", "<c-w>w" },
 
   -- Leader n for not show search highlight
   { "<leader>n", "<cmd>noh<cr>" },
@@ -135,6 +135,18 @@ local keymapper = {
   { "<bs>", "<c-o>s", "s" },
   { "<c-h>", "<c-o>s", "s" },
 }
+
+-- jump to a floating window first, fall back to the next window
+vim.keymap.set("n", "sw", function()
+  local wins = vim.api.nvim_tabpage_list_wins(0)
+  for _, win in ipairs(wins) do
+    if vim.api.nvim_win_get_config(win).relative ~= "" then
+      vim.api.nvim_set_current_win(win)
+      return
+    end
+  end
+  vim.cmd("wincmd w")
+end, { desc = "Next Window" })
 
 for _, map in ipairs(keymapper) do
   vim.keymap.set(map[3] or "n", map[1], map[2], { noremap = true })
