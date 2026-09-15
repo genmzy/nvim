@@ -142,7 +142,7 @@ return {
       hyperlink = " ",
     },
     anti_conceal = {
-      -- disabled_modes = { "n" },
+      disabled_modes = { "n" },
       ignore = {
         -- bullet = true, -- render bullet in insert mode
         head_border = true,
