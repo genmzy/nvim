@@ -137,10 +137,13 @@ local keymapper = {
 }
 
 -- jump to a floating window first, fall back to the next window
+-- skip focusable=false floats (e.g. treesitter-context): entering those via
+-- nvim_set_current_win triggers their WinEnter handlers and they get closed
 vim.keymap.set("n", "sw", function()
   local wins = vim.api.nvim_tabpage_list_wins(0)
   for _, win in ipairs(wins) do
-    if vim.api.nvim_win_get_config(win).relative ~= "" then
+    local cfg = vim.api.nvim_win_get_config(win)
+    if cfg.relative ~= "" and cfg.focusable ~= false then
       vim.api.nvim_set_current_win(win)
       return
     end
