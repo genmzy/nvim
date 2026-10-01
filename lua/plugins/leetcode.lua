@@ -19,9 +19,10 @@ return {
       translator = true,
       translate_problems = true,
     },
-    lang = "golang",
+    lang = "cpp",
     storage = {
-      home = os.getenv("GOPATH") .. "/src/leetcode",
+      -- home = os.getenv("GOPATH") .. "/src/leetcode",
+      home = ".",
     },
   },
 }
