@@ -13,6 +13,7 @@ local unset_mapper = {
   { "<c-k>", "n" },
   { "<c-l>", "n" },
   { "<leader>bb" },
+  { "<leader>l" },
 }
 
 for _, map in ipairs(unset_mapper) do
