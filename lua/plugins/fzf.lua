@@ -87,7 +87,7 @@ return {
     { "<leader>sp", "<cmd>FzfLua grep_project<cr>", desc = "Grep Project" },
     { "<leader>a/", "<cmd>FzfLua grep_project<cr>", desc = "Grep Project" },
     { "<leader>aa", "<cmd>FzfLua grep_project<cr>", desc = "Grep Project" },
-    { "<leader>l", "<cmd>FzfLua grep_curbuf<cr>", desc = "Buffer Lines" },
+    { "<leader>bl", "<cmd>FzfLua grep_curbuf<cr>", desc = "Buffer Lines" },
     { [[\t]], snacks_terminal_fzf, desc = "Terminals" },
     {
       "<leader><space>",
