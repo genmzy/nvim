@@ -17,7 +17,7 @@ return {
       no_italic = true,
       no_bold = true,
       color_overrides = {
-        mocha = { yellow = "#f9e7af" },
+        mocha = { yellow = "#f9e7af", base = "#181825", mantle = "#11111b" },
       },
       custom_highlights = function(colors)
         return {
